@@ -13,7 +13,7 @@ In this article you can find detailed information about how the Azure AD applica
 
 If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
 
-[![IMAGE_ALT](https://img.youtube.com/vi/QZeVzhtl-GA/0.jpg)](https://www.youtube.com/watch?v=QZeVzhtl-GA)
+[![IMAGE_ALT](https://img.youtube.com/vi/QG96saT5JPs/0.jpg)](https://youtu.be/QG96saT5JPs)
 
 ## Upgrading from ACS to Azure AD
 In this section we make the assumption that you already have an app-only application registered in SharePoint Online, using the SharePoint Add-in model and ACS. 
@@ -82,6 +82,9 @@ In the following sections you will see how to proceed with the Azure AD applicat
 
 ### Automatically registering a new application in Azure AD with PnP PowerShell
 The fastest and easiest way to register an Azure AD application to access SharePoint Online in app-only mode is to rely on [PnP PowerShell](https://pnp.github.io/powershell/).
+
+>[!NOTE]
+>PnP PowerShell is an open-source solution with active community providing support for it. There is no SLA for the open-source tool support from Microsoft.
 
 In fact, there is the [Register-PnPAzureADApp](https://pnp.github.io/powershell/cmdlets/Register-PnPAzureADApp.html) cmdlet, which allows to execute all the registration steps with just one line of code. In the following code excerpt you can see a PowerShell script to do so.
 
