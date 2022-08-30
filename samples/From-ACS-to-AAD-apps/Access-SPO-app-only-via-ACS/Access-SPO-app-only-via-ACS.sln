@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Access-SPO-app-only-via-ACS", "Access-SPO-app-only-via-ACS.csproj", "{9FF7BB23-89CE-4C20-A1A1-7BA27FEA7F6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FF7BB23-89CE-4C20-A1A1-7BA27FEA7F6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FF7BB23-89CE-4C20-A1A1-7BA27FEA7F6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FF7BB23-89CE-4C20-A1A1-7BA27FEA7F6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FF7BB23-89CE-4C20-A1A1-7BA27FEA7F6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6CD9F51-1C30-433E-9F14-A9D61B6D8E64}
+	EndGlobalSection
+EndGlobal
