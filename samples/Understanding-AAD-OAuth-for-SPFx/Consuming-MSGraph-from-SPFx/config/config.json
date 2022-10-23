@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "consume-ms-graph-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/consumeMsGraph/ConsumeMsGraphWebPart.js",
+          "manifest": "./src/webparts/consumeMsGraph/ConsumeMsGraphWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ConsumeMsGraphWebPartStrings": "lib/webparts/consumeMsGraph/loc/{locale}.js"
+  }
+}

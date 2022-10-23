@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "consuming-msgraph-from-spfx-client-side-solution",
+    "id": "b53fd1ad-2f45-40c4-9689-1fc49d2bdc6b",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.0"
+    },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "User.Read"
+      }
+    ],
+    "metadata": {
+      "shortDescription": {
+        "default": "consuming-msgraph-from-spfx description"
+      },
+      "longDescription": {
+        "default": "consuming-msgraph-from-spfx description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "consuming-msgraph-from-spfx Feature",
+        "description": "The feature that activates elements of the consuming-msgraph-from-spfx solution.",
+        "id": "e8e4383d-047e-4d16-9ec5-c98a00ea5c38",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/consuming-msgraph-from-spfx.sppkg"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.15.0",
+    "libraryName": "consuming-msgraph-from-spfx",
+    "libraryId": "b53fd1ad-2f45-40c4-9689-1fc49d2bdc6b",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "consuming-msgraph-from-spfx",
+    "solutionShortDescription": "consuming-msgraph-from-spfx description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

@@ -21,7 +21,7 @@ In this section we make the assumption that you already have an app-only applica
 ### The application to migrate from
 In the screen-shot below you can see a sample configuration for the application registered in ACS using the https://[your-tenant].sharepoint.com/_layouts/15/appregnew.aspx URL of your target tenant.
 
-![The Application Registration page with form fields to register an application in ACS. The fields are: Client Id, Client Secret, Title, App Domain, and Redirect URI.](./assets/From-ACS-to-AAD-apps-ACS-appregnew.png)
+![The Application Registration page with form fields to register an application in ACS. The fields are: Client Id, Client Secret, Title, App Domain, and Redirect URI.](./assets/From-ACS-to-AAD-apps/From-ACS-to-AAD-apps-ACS-appregnew.png)
 
 The application was granted *FullControl* right on the target SharePoint Online tenant through the following policy, which was registered via the https://[your-tenant]-admin.sharepoint.com/_layouts/15/appinv.aspx URL of the SharePoint Online Admin Central.
 
@@ -33,7 +33,7 @@ The application was granted *FullControl* right on the target SharePoint Online 
 
 In the following screen-shot you can see the UI settings used for granting Full Control permission to the application.
 
-![The Application Inventory page with form fields to grant permissions to the application in ACS. The fields are: App Id, a lookup button to search for the app by App Id, information fields about the application, and the App's Permission Request XML to define the permissions to grant to the application.](./assets/From-ACS-to-AAD-apps-ACS-appinv.png)
+![The Application Inventory page with form fields to grant permissions to the application in ACS. The fields are: App Id, a lookup button to search for the app by App Id, information fields about the application, and the App's Permission Request XML to define the permissions to grant to the application.](./assets/From-ACS-to-AAD-apps/From-ACS-to-AAD-apps-ACS-appinv.png)
 
 We also make the assumption that you are accessing a target SharePoint Online Site Collection in order to read and write the items of a SharePoint library. 
 
@@ -107,7 +107,7 @@ The above script outputs the Client ID of the application and the thumbprint of 
 
 During the whole process you will see a prompt dialog to grant to the application the permissions. In the following scree-shot you can see the permissions automatically granted to the application by the cmdlet.
 
-![The permissions granted to the application registered by the PnP PowerShell cmdlet. The application permissions for Microsoft Graph are: Group.ReadWrite.All, User.ReadWrite.All. The application permissions for SharePoint Online are: Sites.FullControl.All, User.ReadWrite.All.](./assets/From-ACS-to-AAD-apps-ACS-AAD-app-automatic-permissions.png)
+![The permissions granted to the application registered by the PnP PowerShell cmdlet. The application permissions for Microsoft Graph are: Group.ReadWrite.All, User.ReadWrite.All. The application permissions for SharePoint Online are: Sites.FullControl.All, User.ReadWrite.All.](./assets/From-ACS-to-AAD-apps/From-ACS-to-AAD-apps-ACS-AAD-app-automatic-permissions.png)
 
 There are plenty of options to configure the behavior of the [Register-PnPAzureADApp](https://pnp.github.io/powershell/cmdlets/Register-PnPAzureADApp.html) cmdlet. For example, you could like to customize the permissions to grant to the application using the *GraphApplicationPermissions* and the *SharePointApplicationPermissions* arguments.
 
@@ -116,11 +116,11 @@ If you are not interested in the manual process, you can jump to the section ["C
 ### Manually registering a new application in Azure AD
 The PnP PowerShell cmdlet to automatically register the Azure AD application is really powerful. However, there are scenarios where you want much more control on the process. In such scenarios you can manually register a new application in Azure AD. To achieve the same result illustrated before, you need to open a browser an go to https://aad.portal.azure.com/. Select *Azure Active Directory* on the left tab to activate the Azure AD blade,  then choose **App registrations** in the list of sections available in the left menu of the Azure AD blade. In the screen-shot below you can see the user interface of the Azure AD blade in such scenario.
 
-![The Azure AD blade with the App registrations section highligted. There is a list of registered applications and you can add new applications by clicking on the New registration button.](./assets/From-ACS-to-AAD-apps-ACS-AAD-app-registrations.png)
+![The Azure AD blade with the App registrations section highligted. There is a list of registered applications and you can add new applications by clicking on the New registration button.](./assets/From-ACS-to-AAD-apps/From-ACS-to-AAD-apps-ACS-AAD-app-registrations.png)
 
 Click on the *New registration* button in order to start the manual application registration process. In the following screen-shot you can see the form to register a new application.
 
-![The form to register a new application. The fields to fill in are Name, Supported account types (can be single-tenat, multi-tenant, multi-tenant and Microsoft Personal Account, Microsoft Personal Account only), optional Redirect URI for the application.](./assets/From-ACS-to-AAD-apps-ACS-AAD-register-an-application.png)
+![The form to register a new application. The fields to fill in are Name, Supported account types (can be single-tenat, multi-tenant, multi-tenant and Microsoft Personal Account, Microsoft Personal Account only), optional Redirect URI for the application.](./assets/From-ACS-to-AAD-apps/From-ACS-to-AAD-apps-ACS-AAD-register-an-application.png)
 
 You need to provide a name for your new application. Then you need to choose the accounts that you want to support. Available options are:
 - Accounts in this organizational directory only: the application will target a single tenant (i.e. single-tenant).
@@ -135,7 +135,7 @@ For the current scenario, you can choose either the single-tenant or multi-tenan
 
 Click the *Register* button and register the actual application. You will now be prompted with a page with a set of useful information about the registered application. You can see the page in the following screen-shot.
 
-![The registered app information page including Name, Client ID, Object ID, Tenant ID, etc.](./assets/From-ACS-to-AAD-apps-ACS-AAD-app-registered.png)
+![The registered app information page including Name, Client ID, Object ID, Tenant ID, etc.](./assets/From-ACS-to-AAD-apps/From-ACS-to-AAD-apps-ACS-AAD-app-registered.png)
 
 ### Configuring an X.509 Certificate for the application
 You can manually create an X.509 certificate for your application, using any tool of your choice. However, the easiest and fastest way to create an X.509 certificate for Azure AD authentication is one more time to rely on [PnP PowerShell](https://pnp.github.io/powershell/) and specifically on the **New-PnPAzureCertificate** cmdlet. Here follows an example of the PowerShell syntax to create a new X.509 certificate.
@@ -153,12 +153,12 @@ The above script will create a new X.509 certificate and it will store its .PFX 
 
 Now, you are ready to upload the certificate into Azure AD. Go back to the Azure AD web page showing the application information and click on the *Certificates & secrets* menu on the left side of the application page. Select the *Certificates* tab in the page and click on *Upload certificate* and upload the .CER file from there. In the following screen-shot you can see how the Azure AD portal UI looks like when uploading an X.509 certificate.
 
-![The interface to upload an X.509 certificate for an Azure AD application. There is the Upload certificate button and the upload panel on the right, where you need to specify the .CER certificate file path and an optional description for the certificate. Click on the Add button to upload the certificate.](./assets/From-ACS-to-AAD-apps-ACS-AAD-app-manual-certificate-upload.png)
+![The interface to upload an X.509 certificate for an Azure AD application. There is the Upload certificate button and the upload panel on the right, where you need to specify the .CER certificate file path and an optional description for the certificate. Click on the Add button to upload the certificate.](./assets/From-ACS-to-AAD-apps/From-ACS-to-AAD-apps-ACS-AAD-app-manual-certificate-upload.png)
 
 ### Granting permissions to the application
 You are now ready to grant permissions to the application. You simply need to click on the *API Permissions* menu on the left side of the screen and click on the *Add a permission* command. In the below screen-shot you can see how the user interface looks like.
 
-![The interface to add permissions to an Azure AD application. You can click on the "Add a permission" button to start adding new permissions.](./assets/From-ACS-to-AAD-apps-ACS-AAD-app-add-api-permissions.png)
+![The interface to add permissions to an Azure AD application. You can click on the "Add a permission" button to start adding new permissions.](./assets/From-ACS-to-AAD-apps/From-ACS-to-AAD-apps-ACS-AAD-app-add-api-permissions.png)
 
 You will be prompted by a multi-step wizard through which you can choose the permissions to add. In order to access SharePoint Online, you can either choose *Microsoft Graph* or *SharePoint* as the target API. Since in this article we are talking about configuring an application for app-only access to SharePoint, you should select to add permissions of type *Application permissions*. Lastly, you have to select the permissions that you want to add.
 
@@ -196,7 +196,7 @@ Just for the sake of making an example, let's add the following permissions:
 
 Once you have added permissions to an application in Azure AD, you might need to explicitly grant those permissions. In the list of permissions you can see a column with name *Status* and if the value is "Not granted for [name of your tenant]" with an orange exclamation mark you will need to click on the button *Grant admin consent for [name of your tenant]* in order to grant consent for those permissions, like it is illustrated in the following screen-shot.
 
-![The interface to grant consent for permission of an Azure AD application. You can click on the "Grant admin consent for ..." button and grant permission to the application.](./assets/From-ACS-to-AAD-apps-ACS-AAD-app-grant-api-permissions.png)
+![The interface to grant consent for permission of an Azure AD application. You can click on the "Grant admin consent for ..." button and grant permission to the application.](./assets/From-ACS-to-AAD-apps/From-ACS-to-AAD-apps-ACS-AAD-app-grant-api-permissions.png)
 
 By granting consent, the value of the *Status* column of the permissions will become "Granted for [name of your tenant]" and there will be a green check mark.
 
