@@ -4,10 +4,10 @@
     - Lists/Libraries
     - Sites
     - etc.
-- From ACS-registered apps to AAD-registered applications
-    - AAD and OAuth
-        - Delegated permissions
-        - Application permissions
+* From ACS-registered apps to AAD-registered applications
+    * AAD and OAuth
+        * Delegated permissions
+        * Application permissions
     - Multi-tenant applications
     - Resource Specific Consent
 - From App Parts and classic Web Parts to modern client-side SPFx Web Parts

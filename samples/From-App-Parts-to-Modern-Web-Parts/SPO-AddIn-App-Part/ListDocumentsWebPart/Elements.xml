@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ClientWebPart Name="ListDocumentsWebPart" Title="ListDocumentsWebPart Title" Description="ListDocumentsWebPart Description" DefaultWidth="300" DefaultHeight="200">
+
+    <!-- Content element identifies the location of the page that will render inside the client web part
+         Properties are referenced on the query string using the pattern _propertyName_
+         Example: Src="~appWebUrl/Pages/ClientWebPart1.aspx?Property1=_property1_" -->
+    <Content Type="html" Src="~appWebUrl/Pages/ListDocumentsWebPart.aspx?{StandardTokens}&amp;SearchFilter=_SearchFilter_" />
+
+    <!-- Define properties in the Properties element.
+         Remember to put Property Name on the Src attribute of the Content element above. -->
+    <Properties>
+      <Property xmlns="http://schemas.microsoft.com/sharepoint/"
+        Name="SearchFilter"
+        DefaultValue=""
+        Multilingual="true"
+        PersonalizationScope="user"
+        PersonalizableIsSensitive="true"
+        Type="string"
+        RequiresDesignerPermission="false"
+        WebBrowsable= "true"
+        WebCategory="Search"
+        WebDescription="Define a custom search filter"
+        WebDisplayName="Search filter">
+      </Property>
+    </Properties>
+
+  </ClientWebPart>
+</Elements>

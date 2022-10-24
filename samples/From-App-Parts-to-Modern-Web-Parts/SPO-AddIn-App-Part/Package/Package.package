@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="593fc504-78eb-45c9-aca1-8ab049f820c7" 
+        solutionId="593fc504-78eb-45c9-aca1-8ab049f820c7" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="SPO_AddIn_App_Part"
+        sharePointProductVersion="16.0">
+  <features>
+        <featureReference itemId="51f448fb-5a7a-414a-8aaf-25172b05c368" />
+  </features>
+</package>
