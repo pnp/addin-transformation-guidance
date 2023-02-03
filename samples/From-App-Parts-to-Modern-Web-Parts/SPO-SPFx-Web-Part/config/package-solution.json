@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spo-sp-fx-web-part-client-side-solution",
+    "id": "06b2a772-deaa-4b4b-855b-e50bd8e935f0",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Files.Read"
+      }
+    ],
+    "metadata": {
+      "shortDescription": {
+        "default": "spo-sp-fx-web-part description"
+      },
+      "longDescription": {
+        "default": "spo-sp-fx-web-part description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spo-sp-fx-web-part Feature",
+        "description": "The feature that activates elements of the spo-sp-fx-web-part solution.",
+        "id": "380caeb6-06fb-4cff-ae7f-452977f1e20c",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spo-sp-fx-web-part.sppkg"
+  }
+}
