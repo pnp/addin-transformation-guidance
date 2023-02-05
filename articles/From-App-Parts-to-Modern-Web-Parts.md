@@ -132,7 +132,7 @@ The App Part is then defined in an XML manifest file, where it is also defined t
 </Elements>
 ```
 
-In order to work, the SharePoint Add-in model solution requires the Read permission for libraries (BaseTemplate=101) defined in its AppManifest.xml file. In the following screeshot you can see the configuration of the AppManifest.xml file.
+In order to work, the SharePoint Add-in model solution requires the Read permission for libraries (BaseTemplate=101) defined in its *AppManifest.xml* file. In the following screeshot you can see the configuration of the AppManifest.xml file.
 
 ![The permissions requests configured for the SharePoint Add-in model solution. There is a permission for scope "List", with permission "Read", and with properties "BaseTemplate=101;".](./assets/From-App-Parts-to-Modern-Web-Parts/From-App-Parts-to-Modern-Web-Parts-app-manifest.png)
 
@@ -177,7 +177,7 @@ In the following image, you can see the outline of the generated SharePoint Fram
 
 ![The outline of the SharePoint Framework generated solution.](./assets/From-App-Parts-to-Modern-Web-Parts/From-App-Parts-to-Modern-Web-Parts-spfx-outline.png)
 
-The main file, to start from is the *ListDocumentsWebPart.ts*, under the *src\webparts\listDocuments* folders. The file is based on TypeScript syntax, which is the one used by SharePoint Framework.
+The main file, to start from is the *ListDocumentsWebPart.ts*, under the *src\webparts\listDocuments* folder. The file is based on TypeScript syntax, which is the one used by SharePoint Framework.
 
 ```TypeScript
 

@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.18.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.1",
+    "libraryName": "spo-sp-fx-list-view-command-set",
+    "libraryId": "b1d41688-f75b-4349-84aa-ef1bb56f9085",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "spo-sp-fx-list-view-command-set",
+    "solutionShortDescription": "spo-sp-fx-list-view-command-set description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ListViewCommandSet"
+  }
+}

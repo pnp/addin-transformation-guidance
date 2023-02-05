@@ -42,7 +42,8 @@ export default class ListDocumentsWebPart extends BaseClientSideWebPart<IListDoc
   }
 
   protected onInit(): Promise<void> {
-    
+
+    // Initialize MGT
     if (!Providers.globalProvider) {
       Providers.globalProvider = new SharePointProvider(this.context);
     }
