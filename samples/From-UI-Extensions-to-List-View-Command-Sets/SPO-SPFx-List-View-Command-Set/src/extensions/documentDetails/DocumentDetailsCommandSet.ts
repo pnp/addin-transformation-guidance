@@ -8,20 +8,9 @@ import {
 } from '@microsoft/sp-listview-extensibility';
 import DocumentDetailsDialog from './components/documentDetailsDialog/DocumentDetailsDialog';
 
-/**
- * If your command set uses the ClientSideComponentProperties JSON input,
- * it will be deserialized into the BaseExtension.properties object.
- * You can define an interface to describe it.
- */
-export interface IDocumentDetailsCommandSetProperties {
-  // This is an example; replace with your own properties
-  sampleTextOne: string;
-  sampleTextTwo: string;
-}
-
 const LOG_SOURCE: string = 'DocumentDetailsCommandSet';
 
-export default class DocumentDetailsCommandSet extends BaseListViewCommandSet<IDocumentDetailsCommandSetProperties> {
+export default class DocumentDetailsCommandSet extends BaseListViewCommandSet<{}> {
 
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, 'Initialized DocumentDetailsCommandSet');
@@ -40,7 +29,7 @@ export default class DocumentDetailsCommandSet extends BaseListViewCommandSet<ID
     return Promise.resolve();
   }
 
-  public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
+  public async onExecute(event: IListViewCommandSetExecuteEventParameters): Promise<void> {
     switch (event.itemId) {
       case 'DOC_DETAILS': {
         const tenantName: string = this.context.pageContext.site.absoluteUrl.substring(8,
@@ -52,9 +41,9 @@ export default class DocumentDetailsCommandSet extends BaseListViewCommandSet<ID
         const driveId: string = spItemUrl.substring(spItemUrl.indexOf('drives/') + 7, spItemUrl.indexOf('items'));
         const itemId: string = spItemUrl.substring(spItemUrl.indexOf('items/') + 6, spItemUrl.indexOf('?'));
 
-        this._showDocumentDetailsDialog(
+        await this._showDocumentDetailsDialog(
           tenantName, siteId, webId,
-          driveId, itemId).then((result) => { return; }).catch((e) => { return; });
+          driveId, itemId);
         break;
       }
       default:
@@ -70,8 +59,6 @@ export default class DocumentDetailsCommandSet extends BaseListViewCommandSet<ID
       // This command should be hidden unless exactly one row is selected.
       compareOneCommand.visible = this.context.listView.selectedRows?.length === 1;
     }
-
-    // TODO: Add your logic here
 
     // You should call this.raiseOnChage() to update the command bar
     this.raiseOnChange();

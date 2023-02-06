@@ -11,7 +11,7 @@
     - Multi-tenant applications
     - Resource Specific Consent
 * From App Parts and classic Web Parts to modern client-side SPFx Web Parts
-- From UI Extensions to SPFx List View Command Set
+* From UI Extensions to SPFx List View Command Set
 - From status bars and notifications to SPFx Application Customizers
 - From Remote Event Receivers to SharePoint Online Webhooks and Microsoft Graph Webhooks
 - From SharePoint-hosted apps to client-side applications

@@ -221,7 +221,7 @@ code .
 
 In the following image, you can see the outline of the generated SharePoint Framework solution.
 
-![The outline of the SharePoint Framework generated solution.](./assets/From-App-Parts-to-Modern-Web-Parts/From-App-Parts-to-Modern-Web-Parts-spfx-outline.png)
+![The outline of the SharePoint Framework generated solution.](./assets/From-UI-Extensions-to-List-View-Command-Sets/From-UI-Extension-to-List-View-Command-Set-spfx-outline.png)
 
 The main file, to start from is the *DocumentDetailsCommandSet.ts*, under the *src\extensions\documentDetails* folder. The file is based on TypeScript syntax, which is the one used by SharePoint Framework.
 
@@ -421,7 +421,7 @@ However, there are also a couple of new attributes:
 * *ClientSideComponentProperties*: defines the custom configuration properties for the extension, if any. It is a string containing a JSON serialized object that represents an instance of the interface that declares the custom properties of the extension (in this example the interface is *IDocumentDetailsCommandSetProperties*).
 
 ### Building the actual SharePoint Framework List View Command Set
-Now that you have an overview of the solution, let's build the actual List View Command Set to provide the document details, transforming the old SharePoint Add-in model UI Extension.
+Now that you have an overview of the solution, let's build the actual List View Command Set to provide the document details functionality, transforming the old SharePoint Add-in model UI Extension.
 
 First of all, edit the manifest file and replace its content with the following one.
 
@@ -453,9 +453,9 @@ First of all, edit the manifest file and replace its content with the following 
 }
 ```
 
-The updated manifest declares just one command, with unique name of *DOC_DETAILS*, with title 'Document Details', and with a custom icon image URL. Actually, the image is not a URL but a base64 encoded image, in order to not have any dependency on external files. For the sake of simplicity, in the code excerpt the base64 image is shortened.
+The updated manifest declares just one command, with unique name of *DOC_DETAILS*, with title 'Document Details', and with a custom icon image URL. Actually, the image is not a URL but a Base64 encoded image, in order to not have any dependency on external files. For the sake of simplicity, in the code excerpt the Base64 image is shortened.
 
-Now, update the element file to show the List View Command Set both in the command bar and in the ECB menu, by providing a value of *ClientSideExtension.ListViewCommandSet* in the Location attribute. Plus, remove the content of the *ClientSideComponentProperties* attribute, because the sample extension doesn't need any custom properties. Here you can see the new element file.
+Now, update the element file to show the List View Command Set both in the command bar and in the ECB menu, by providing a value of *ClientSideExtension.ListViewCommandSet* in the *Location* attribute. Plus, remove the content of the *ClientSideComponentProperties* attribute, because the sample extension doesn't need any custom properties. Here you can see the new element file.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -481,244 +481,180 @@ In the new SharePoint Framework implementation of the extension you will rely on
 > [!NOTE]
 > You can learn more about the *File* component of MGT by reading the document [File component in Microsoft Graph Toolkit](https://learn.microsoft.com/en-us/graph/toolkit/components/file).
 
-In order to use the MGT component and the SPFx Dialog Framework, you need to import React into the extension code. Add the following lines of code at the beginning of the *DocumentDetailsCommandSet.ts* file.
+Now, create a new folder structure *src\documentDetails\components\documentDetailsDialog* that you will use to contain a new React component file called *DocumentDetailsDialog.tsx*. Within the same new folder, create also another file called *IDocumentDetailsDialogProps.ts* that you will use to define the configuration properties for the dialog window.
+In the following code excerpt you can see the definition of the interface defining the properties for the dialog.
+
+```TypeScript
+export interface IDocumentDetailsDialogProps {
+    tenantName: string;
+    siteId: string;
+    webId: string;
+    driveId: string;
+    itemId: string;
+    onClose: () => Promise<void>;
+}
+```
+
+The set of properties of type *string* define the pointer to the document in Microsoft Graph through the *tenantName*, *siteId*, *webId*, *driveId*, and *itemId*. The last property defines a method that will be used to handle the closing of the dialog window. It is an asynchronous method with no return value (`Promise<void>`).
+
+In the following code excerpt you can find the implementation of the dialog component.
 
 ```TypeScript
 import * as React from 'react';
-import * as ReactDom from 'react-dom';
-```
+import * as ReactDOM from 'react-dom';
+import { IDocumentDetailsDialogProps } from './IDocumentDetailsDialogProps';
 
+import { BaseDialog, IDialogConfiguration } from '@microsoft/sp-dialog';
+import {
+    DefaultButton,
+    DialogFooter,
+    DialogContent
+} from 'office-ui-fabric-react';
 
+import { File } from '@microsoft/mgt-react/dist/es6/spfx';
 
+class DocumentDetailsDialogContent extends
+    React.Component<IDocumentDetailsDialogProps, {}> {
 
+    public render(): JSX.Element {
+        return (<div>
+            <DialogContent
+                title="Document Details"
+                onDismiss={this.props.onClose}>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The property pane for configuring the properties of the web part is rendered thanks to the *getPropertyPaneConfiguration* method, which renders a field for each property. The rendering of the fields relies also on resource strings defined in external files declared within the SharePoint Framework solution, under the *src\webparts\listDocuments\loc* folder. The default language generated by the scaffolding tool is the US English one (en-us).
-
-As such, if you want to provide the same documents filtering experince of the App Part, you can simply replace the interface definition with the following one:
-
-```TypeScript
-export interface IListDocumentsWebPartProps {
-  searchFilter: string;
-}
-```
-
-Then, you will also need to update the *getPropertyPaneConfiguration* method implementation, like in the following code excerpt:
-
-```TypeScript
-  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
-    return {
-      pages: [
-        {
-          header: {
-            description: strings.PropertyPaneDescription
-          },
-          groups: [
-            {
-              groupName: strings.BasicGroupName,
-              groupFields: [
-                PropertyPaneTextField('searchFilter', {
-                  label: strings.SearchFilterFieldLabel
-                })
-              ]
-            }
-          ]
-        }
-      ]
-    };
-  }
-```
-
-Notice that the `PropertyPaneTextField` object in the *groupFields* was updated to handle the new *searchFilter* property. There is also a new resource string for the label of the field, which was created in the file *src\webparts\listDocuments\loc\mystrings.d.ts* and whose value is configured in the resource file *src\webparts\listDocuments\loc\en-us.js*.
-
-Another interesting part of the web part code is the *render* method, where the scaffolded solution simply creates an instance of a React component that is defined in the *src\webparts\listDocuments\components* folder. As you can see, the React component receives a set of properties as input arguments to configure its behavior. Since you replaced the *description* property in the *IListDocumentsWebPartProps* interface, you also need to update the render method accordingly, as you can see in the following code excerpt. Moreover, for the sake of being able to query the list of files using Microsoft Graph, the *render* method provides to the React component also the current Site ID, Web ID, and tenant name.
-
-```TypeScript
-public render(): void {
-const element: React.ReactElement<IListDocumentsProps> = React.createElement(
-    ListDocuments,
-    {
-    searchFilter: this.properties.searchFilter,
-    tenantName: this.context.pageContext.site.absoluteUrl.substring(8,
-        this.context.pageContext.site.absoluteUrl.indexOf('/', 8)),
-    siteId: this.context.pageContext.site.id.toString(),
-    webId: this.context.pageContext.web.id.toString(),
-    isDarkTheme: this._isDarkTheme,
-    environmentMessage: this._environmentMessage,
-    hasTeamsContext: !!this.context.sdks.microsoftTeams,
-    userDisplayName: this.context.pageContext.user.displayName
+            <div>
+                    <File siteId={`${this.props.tenantName},${this.props.siteId},${this.props.webId}`}
+                        driveId={this.props.driveId} itemId={this.props.itemId} />
+            </div>
+            <DialogFooter>
+                <DefaultButton text="Close"
+                    title="Close" onClick={this.props.onClose} />
+            </DialogFooter>
+        </DialogContent>
+    </div>);
     }
-);
+}
 
-ReactDom.render(element, this.domElement);
+export default class DocumentDetailsDialog extends BaseDialog {
+
+    /**
+     * Constructor for the dialog window
+     */
+    constructor(public tenantName: string,
+        public siteId: string, public webId: string,
+        public driveId: string, public itemId: string) {
+        super({isBlocking: true});
+    }
+  
+    public render(): void {
+        ReactDOM.render(<DocumentDetailsDialogContent
+                tenantName={this.tenantName}
+                siteId={this.siteId}
+                webId={this.webId}
+                driveId={this.driveId}
+                itemId={this.itemId}
+                onClose={this._close}
+            />,
+            this.domElement);
+    }
+  
+    public getConfig(): IDialogConfiguration {
+      return {
+        isBlocking: true
+      };
+    }
+  
+    private _close = async (): Promise<void> => {
+        ReactDOM.unmountComponentAtNode(this.domElement);
+        await this.close();
+    }
 }
 ```
 
-One more thing you need to do in your web part code is to initialize the MGT library. First of all, you will need to reference the MGT library in the code file, by adding the following line in the top section of the file, right after all the *import* statements.
+The main type is the *DocumentDetailsDialog* class, which is also the default export of the file. It inherits from `BaseDialog`, which is a type defined in the SharePoint Framework Dialog Framework (`@microsoft/sp-dialog`).
+The public constructor of the dialog class accepts all the properties needed to target the selected file via Microsoft Graph. The *render* method simply creates an instance of a React component called *DocumentDetailsDialogContent* that is defined just before the dialog class. Within the dialog class, you can also find the definition of the *_close* method, which is used to close the dialog and unmount the resources allocated by React.
+
+The *DocumentDetailsDialogContent* component is a really trivial React component that renders the `File` component of MGT and provides a "Close" button to close the dialog. 
+
+The *DocumentDetailsDialog* component is instantiated in the *onExecute* method of the List View Command Set. Moreover, the MGT library is initialized in the *onInit* method of the class by registering its global provider, relying on the types imported from `@microsoft/mgt-spfx`. In the following code excerpt you can see the updated *DocumentDetailsCommandSet.ts* file.
 
 ```TypeScript
 import { Providers, SharePointProvider } from '@microsoft/mgt-spfx';
-```
+import { Log } from '@microsoft/sp-core-library';
+import {
+  BaseListViewCommandSet,
+  Command,
+  IListViewCommandSetExecuteEventParameters,
+  ListViewStateChangedEventArgs
+} from '@microsoft/sp-listview-extensibility';
+import DocumentDetailsDialog from './components/documentDetailsDialog/DocumentDetailsDialog';
 
-Then, replace the *onInit* method of the web part with the following code excerpt.
+const LOG_SOURCE: string = 'DocumentDetailsCommandSet';
 
-```TypeScript
-protected onInit(): Promise<void> {
+export default class DocumentDetailsCommandSet extends BaseListViewCommandSet<{}> {
 
-if (!Providers.globalProvider) {
-    Providers.globalProvider = new SharePointProvider(this.context);
-}
+  public onInit(): Promise<void> {
+    Log.info(LOG_SOURCE, 'Initialized DocumentDetailsCommandSet');
 
-return this._getEnvironmentMessage().then(message => {
-    this._environmentMessage = message;
-});
-}
-```
+    // Initialize MGT
+    if (!Providers.globalProvider) {
+      Providers.globalProvider = new SharePointProvider(this.context);
+    }
 
-As you can see, the new *onInit* method relies on `Providers.globalProvider` to set an instance of the `SharePointProvider` of MGT that you referenced before. The result of the above syntax is that MGT will be initialized and ready to use the SharePoint Framework security context in order to consume Microsoft Graph. 
+    // initial state of the command's visibility
+    const compareOneCommand: Command = this.tryGetCommand('DOC_DETAILS');
+    compareOneCommand.visible = false;
 
-Now, in order to make your code to work, you will have to update the React component to support the new *searchFilter* property, as well as the *tenantName*, *siteId*, and *webId* properties. Open the *src\webparts\listDocuments\components\IListDocumentsProps.ts* file and replace the description property with the *searchFilter* one. Then add three new properties named *tenantName*, *siteId*, and *webId* like it is illustrated in the following code excerpt.
+    this.context.listView.listViewStateChangedEvent.add(this, this._onListViewStateChanged);
 
-```TypeScript
-export interface IListDocumentsProps {
-  searchFilter: string;
-  tenantName: string;
-  siteId: string;
-  webId: string;
-  isDarkTheme: boolean;
-  environmentMessage: string;
-  hasTeamsContext: boolean;
-  userDisplayName: string;
-}
-```
+    return Promise.resolve();
+  }
 
-Now open the *src\webparts\listDocuments\components\ListDocuments.tsx* file, which represents the React component that will render the User Experience of the modern web part. Import the *FileList* component from the MGT library and update the *render* method in order to replace the *description* property with the new *searchFilter* one.
+  public async onExecute(event: IListViewCommandSetExecuteEventParameters): Promise<void> {
+    switch (event.itemId) {
+      case 'DOC_DETAILS': {
+        const tenantName: string = this.context.pageContext.site.absoluteUrl.substring(8,
+          this.context.pageContext.site.absoluteUrl.indexOf('/', 8));
+        const siteId: string = this.context.pageContext.site.id.toString();
+        const webId: string = this.context.pageContext.web.id.toString();
 
-> [!NOTE]
-> You can find further information about the *FileList* component by reading the document [File list component in Microsoft Graph Toolkit](https://learn.microsoft.com/en-us/graph/toolkit/components/file-list).
+        const spItemUrl: string = event.selectedRows[0].getValueByName(".spItemUrl");
+        const driveId: string = spItemUrl.substring(spItemUrl.indexOf('drives/') + 7, spItemUrl.indexOf('items'));
+        const itemId: string = spItemUrl.substring(spItemUrl.indexOf('items/') + 6, spItemUrl.indexOf('?'));
 
-Lastly replace the whole return value of the render method, in order to show the value of the *searchFilter* property and the actual list of files using the *MgtFileList* component.
+        await this._showDocumentDetailsDialog(
+          tenantName, siteId, webId,
+          driveId, itemId);
+        break;
+      }
+      default:
+        throw new Error('Unknown command');
+    }
+  }
 
-```TypeScript
-import * as React from 'react';
-import styles from './ListDocuments.module.scss';
-import { IListDocumentsProps } from './IListDocumentsProps';
-import { escape } from '@microsoft/sp-lodash-subset';
-import { FileList } from '@microsoft/mgt-react/dist/es6/spfx';
+  private _onListViewStateChanged = (args: ListViewStateChangedEventArgs): void => {
+    Log.info(LOG_SOURCE, 'List view state changed');
 
-export default class ListDocuments extends React.Component<IListDocumentsProps, {}> {
-  public render(): React.ReactElement<IListDocumentsProps> {
-    const {
-      searchFilter,
-      tenantName,
-      siteId,
-      webId,
-      isDarkTheme,
-      environmentMessage,
-      hasTeamsContext,
-      userDisplayName
-    } = this.props;
+    const compareOneCommand: Command = this.tryGetCommand('DOC_DETAILS');
+    if (compareOneCommand) {
+      // This command should be hidden unless exactly one row is selected.
+      compareOneCommand.visible = this.context.listView.selectedRows?.length === 1;
+    }
 
-    // If we have a value for searchFilter, let's use it, otherwise get the whole list of files
-    const fileListQuery: string = searchFilter ?
-      `/sites/${tenantName},${siteId},${webId}/drive/root/search(q='${escape(searchFilter)}')` :
-      `/sites/${tenantName},${siteId},${webId}/drive/root/children`;
+    // You should call this.raiseOnChage() to update the command bar
+    this.raiseOnChange();
+  }
 
-    return (
-      <section className={`${styles.listDocuments} ${hasTeamsContext ? styles.teams : ''}`}>
-        <div className={styles.welcome}>
-          <img alt="" src={isDarkTheme ? require('../assets/welcome-dark.png') : require('../assets/welcome-light.png')} className={styles.welcomeImage} />
-          <h2>Well done, {escape(userDisplayName)}!</h2>
-          <div>{environmentMessage}</div>
-          <div>Current search filter: <strong>{escape(searchFilter)}</strong></div>
-        </div>
-        <div>
-          <FileList fileListQuery={fileListQuery} />
-        </div>
-      </section>
-    );
+  private _showDocumentDetailsDialog = async (tenantName: string,
+      siteId: string, webId: string,
+      driveId: string, itemId: string): Promise<void> => {
+    const documentsDetailsDialog = new DocumentDetailsDialog(tenantName, siteId, webId, driveId, itemId);
+    await documentsDetailsDialog.show();
   }
 }
 ```
 
-As you can see, the code dynamically builds the URL of a Microsoft Graph query to retrieve the list of files in the "Shared Documents" folder of the current site. In case there is a value for the *searchFilter* property, it relies on a search query. If there is no value for the *searchFilter* property it simply retrieves the whole list of files.
-Then, inside the return statement of the *render* method there is an instance of the `FileList` React component of MGT, to render the actual list of files, providing the dynamic query as the value for the *fileListQuery* property.
+Notice also that in this revised implementation the *onExecute* method is defined as an asynchronous method.
+In the following screenshot you can see the output of the List View Command Set in a sample SharePoint document library.
 
-As like as it was with the Add-in model App Part, also in SharePoint Framework you need to configure the permissions needed by your web part in order to consume the Microsoft Graph. You can do that by editing the */config/package-solution.json* file and creating a *WebApiPermissionRequests* section, like in the following code excerpt.
-
-```JSON
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
-  "solution": {
-    "name": "spo-sp-fx-web-part-client-side-solution",
-    "id": "06b2a772-deaa-4b4b-855b-e50bd8e935f0",
-    "version": "1.0.0.0",
-    "includeClientSideAssets": true,
-    "skipFeatureDeployment": true,
-    "isDomainIsolated": false,
-    "developer": {
-      "name": "",
-      "websiteUrl": "",
-      "privacyUrl": "",
-      "termsOfUseUrl": "",
-      "mpnId": "Undefined-1.16.1"
-    },
-    "webApiPermissionRequests": [
-      {
-        "resource": "Microsoft Graph",
-        "scope": "Files.Read"
-      }
-    ],
-```
-
-Once you are done with your changes, you can build the SharePoint Framework solution and run it in debug. In order to do that, you need to update the content of the */config/serve.json* file to target your actual SharePoint online site where you want to test the web part.
-
-```JSON
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
-  "port": 4321,
-  "https": true,
-  "initialPage": "https://enter-your-SharePoint-site/_layouts/workbench.aspx"
-}
-```
-
-Replace the value of the *initialPage* property with the URL of your target site collection.
-Then, you can simply run the following command in the terminal window:
-
-```PowerShell
-gulp serve
-```
-
-A browser window will start and you will see the SharePoint Framework Workbench, which is a page provided by SharePoint Online for debugging your SharePoint Framework components. Click the *Add* button and choose to add the custom *ListDocuments* web part to the page. 
-
-![The UI of SharePoint Framework Workbench to test SharePoint Framework components. The image shows how to add a custom web part to the workbench.](./assets/From-App-Parts-to-Modern-Web-Parts/From-App-Parts-to-Modern-Web-Parts-workbench-add.png)
-
-You will promptly see the following output.
-
-![The UI of SharePoint Framework Workbench to test SharePoint Framework components. The image shows how to add a custom web part to the workbench.](./assets/From-App-Parts-to-Modern-Web-Parts/From-App-Parts-to-Modern-Web-Parts-workbench-output.png)
-
-If you click on the pencil, just beside the web part, you will be able to show the property pane and to configure a search filter, which will be applied to the list of files rendered by the *FileList* control.
+![The output of the SharePoint Framework List View Command Set.](./assets/From-UI-Extensions-to-List-View-Command-Sets/From-UI-Extension-to-List-View-Command-Set-spfx-output.png)
