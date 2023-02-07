@@ -1,28 +1,28 @@
-# From UI Extensions to SharePoint Framework List View Command Sets
+# From UI Extensions to SharePoint Framework ListView Command Sets
 
-In the SharePoint Add-in model you are used to extending the ribbon bar and the ECB (Edit Control Block) menu of lists view and libraries by creating UI Extensions. In the new SharePoint Framework you can achieve the same result by creating the so called List View Command Set.
+In the SharePoint Add-in model you are used to extending the ribbon bar and the ECB (Edit Control Block) menu of lists view and libraries by creating UI Extensions. In the new SharePoint Framework you can achieve the same result by creating the so called ListView Command Set.
 
-In this article you can find detailed information about how to transform an already existing UI Extensions into a List View Command Set.
+In this article you can find detailed information about how to transform an already existing UI Extensions into a ListView Command Set.
 
 > [!NOTE]
-> You can find further details about creating a SharePoint Framework List View Command Set by reading the document [Build your first ListView Command Set extension](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api).
+> You can find further details about creating a SharePoint Framework ListView Command Set by reading the document [Build your first ListView Command Set extension](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api).
 
-## Transforming a UI Extension into a List View Command Set
+## Transforming a UI Extension into a ListView Command Set
 Imagine that you have a UI Extension to render a custom button in the command bar of a Document Library, as well as to add a custom menu item to the ECB menu of the same library. Let's assume also that you want to show the button and the ECB menu item just for document libraries and if and only if just one document is selected by the user.
 The UI Extension will show you a page with detailed information about the selected file.
 In the following screeshot you can see the UI of the UI Extension built with the SharePoint Add-in model when extending the ECB menu of the currently selected document in the SharePoint classic UI.
 
-![The UI of the UI Extension when extending the ECB menu.](./assets/From-UI-Extensions-to-List-View-Command-Sets/From-UI-Extension-to-List-View-Command-Set-ECB.png)
+![The UI of the UI Extension when extending the ECB menu.](./assets/From-UI-Extensions-to-ListView-Command-Sets/From-UI-Extension-to-ListView-Command-Set-ECB.png)
 
 In the next screeshot you can see the UI of the UI Extension built with the SharePoint Add-in model when extending the ribbon of the document library in the SharePoint classic UI.
 
-![The UI of the UI Extension when extending the ribbon menu.](./assets/From-UI-Extensions-to-List-View-Command-Sets/From-UI-Extension-to-List-View-Command-Set-ribbon.png)
+![The UI of the UI Extension when extending the ribbon menu.](./assets/From-UI-Extensions-to-ListView-Command-Sets/From-UI-Extension-to-ListView-Command-Set-ribbon.png)
 
 Lastly, in the following screeshot you can see the actual UI of the UI Extension in action, when showing the details of the selected document.
 
-![The UI of the UI Extension when rendering the details of a document.](./assets/From-UI-Extensions-to-List-View-Command-Sets/From-UI-Extension-to-List-View-Command-Set-legacy-output.png)
+![The UI of the UI Extension when rendering the details of a document.](./assets/From-UI-Extensions-to-ListView-Command-Sets/From-UI-Extension-to-ListView-Command-Set-legacy-output.png)
 
-Now you want to transform the customization into a modern List View Command Set built with SharePoint Framework.
+Now you want to transform the customization into a modern ListView Command Set built with SharePoint Framework.
 
 ### The SharePoint Add-in model solution to migrate from
 In the following code excerpt you can see the actual implementation of the UI Extensions built with javascript code.
@@ -177,7 +177,7 @@ This last element file declares another custom action that still targets the doc
 
 In order to work, the SharePoint Add-in model solution requires the Read permission for libraries (BaseTemplate=101) defined in its *AppManifest.xml* file. In the following screeshot you can see the configuration of the AppManifest.xml file.
 
-![The permissions requests configured for the SharePoint Add-in model solution. There is a permission for scope "List", with permission "Read", and with properties "BaseTemplate=101;".](./assets/From-UI-Extensions-to-List-View-Command-Sets/From-UI-Extension-to-List-View-Command-Set-app-manifest.png)
+![The permissions requests configured for the SharePoint Add-in model solution. There is a permission for scope "List", with permission "Read", and with properties "BaseTemplate=101;".](./assets/From-UI-Extensions-to-ListView-Command-Sets/From-UI-Extension-to-ListView-Command-Set-app-manifest.png)
 
 ### Creating a SharePoint Framework solution
 Now let's create a new SharePoint Framework solution that you will use to transform the previous SharePoint Add-in model solution.
@@ -191,15 +191,15 @@ First of all, you need to scaffold the SharePoint Framework solution, so start a
 yo @microsoft/sharepoint
 ```
 
-![The UI of the scaffolding tool in a PowerShell window, while creating a new project for a SharePoint Framework modern web part.](./assets/From-UI-Extensions-to-List-View-Command-Sets/From-UI-Extension-to-List-View-Command-Set-yo-console.png)
+![The UI of the scaffolding tool in a PowerShell window, while creating a new project for a SharePoint Framework ListView Command Set.](./assets/From-UI-Extensions-to-ListView-Command-Sets/From-UI-Extension-to-ListView-Command-Set-yo-console.png)
 
-Follow the prompts to scaffold a solution for a modern List View Command Set. Specifically, make the following choices, when prompted by the tool:
+Follow the prompts to scaffold a solution for a modern ListView Command Set. Specifically, make the following choices, when prompted by the tool:
 * What is your solution name? **spo-sp-fx-list-view-command-set**
 * Which type of client-side component to create? **Extension**
 * Which type of client-side extension to create? **ListView Command Set**
 * What is your Command Set name? **DocumentDetails**
 
-With the above answers, you decided to create a solution with name *spo-sp-fx-list-view-command-set*, in which there will be a custom extension of type List View Command Set with name *DocumentDetails*.
+With the above answers, you decided to create a solution with name *spo-sp-fx-list-view-command-set*, in which there will be a custom extension of type ListView Command Set with name *DocumentDetails*.
 
 The scaffolding tool will generate for you a new SharePoint Framework solution. When it's done you can simply open the current folder using your favorite code editor. However, before opening the solution you will need to add a package to have an easy and better looking rendering of the UI of your extension. In fact, you are going to reference the MGT (Microsoft Graph Toolkit) library of components and the React framework by running the following commands:
 
@@ -208,7 +208,7 @@ npm install @microsoft/mgt-spfx @microsoft/mgt-react react@17.0.1 react-dom@17.0
 npm install @types/react@17.0.45 @types/react-dom@17.0.17 --save-dev
 ```
 
-In fact, by default the scaffolded solution for a SharePoint Framework List View Command Set does not include the React packages, and it is up to you to choose to add them to the solution.
+In fact, by default the scaffolded solution for a SharePoint Framework ListView Command Set does not include the React packages, and it is up to you to choose to add them to the solution.
 
 > [!NOTE]
 > The Microsoft Graph Toolkit is a set of components to speed up the rendering of the UI of your client-side solutions, including SharePoint Framework solutions. It is not mandatory to use it in this sample solution, but it is an easy way to speed up your learning and development process. You can find detailed information about MGT reading the document [Microsoft Graph Toolkit overview](https://learn.microsoft.com/en-us/graph/toolkit/overview) and you can learn how to integrate MGT with SharePoint Framework reading the document [SharePoint Framework library for Microsoft Graph Toolkit](https://learn.microsoft.com/en-us/graph/toolkit/get-started/mgt-spfx).
@@ -221,7 +221,7 @@ code .
 
 In the following image, you can see the outline of the generated SharePoint Framework solution.
 
-![The outline of the SharePoint Framework generated solution.](./assets/From-UI-Extensions-to-List-View-Command-Sets/From-UI-Extension-to-List-View-Command-Set-spfx-outline.png)
+![The outline of the SharePoint Framework generated solution.](./assets/From-UI-Extensions-to-ListView-Command-Sets/From-UI-Extension-to-ListView-Command-Set-spfx-outline.png)
 
 The main file, to start from is the *DocumentDetailsCommandSet.ts*, under the *src\extensions\documentDetails* folder. The file is based on TypeScript syntax, which is the one used by SharePoint Framework.
 
@@ -409,7 +409,7 @@ The last important file of the solution is the *elements.xml* file, defined unde
 </Elements>
 ```
 
-Interestingly, it is still a file based on the SharePoint Feature Framework, like it was with the UI Extension built with the SharePoint Add-in model. However, the custom action settings are now slightly different. There are still attributes like *RegistrationId* and *RegistrationType* to define the targe of the extension. There is also the *Location* attribute with a new value that targets the *ClientSideExtension.ListViewCommandSet.CommandBar*, meaning that the extension will be rendered in the command bar of the target view. The available options for this attribute in a SharePoint Framework List View Command Set are:
+Interestingly, it is still a file based on the SharePoint Feature Framework, like it was with the UI Extension built with the SharePoint Add-in model. However, the custom action settings are now slightly different. There are still attributes like *RegistrationId* and *RegistrationType* to define the targe of the extension. There is also the *Location* attribute with a new value that targets the *ClientSideExtension.ListViewCommandSet.CommandBar*, meaning that the extension will be rendered in the command bar of the target view. The available options for this attribute in a SharePoint Framework ListView Command Set are:
 
 * *ClientSideExtension.ListViewCommandSet.CommandBar*: to show the extension in the command bar.
 * *ClientSideExtension.ListViewCommandSet.ContextMenu*: to show the extension in the ECB menu.
@@ -420,8 +420,8 @@ However, there are also a couple of new attributes:
 * *ClientSideComponentId*: defines the unique ID of the extension to render, and maps to the *id* attribute defined in the manifest file that we discussed before.
 * *ClientSideComponentProperties*: defines the custom configuration properties for the extension, if any. It is a string containing a JSON serialized object that represents an instance of the interface that declares the custom properties of the extension (in this example the interface is *IDocumentDetailsCommandSetProperties*).
 
-### Building the actual SharePoint Framework List View Command Set
-Now that you have an overview of the solution, let's build the actual List View Command Set to provide the document details functionality, transforming the old SharePoint Add-in model UI Extension.
+### Building the actual SharePoint Framework ListView Command Set
+Now that you have an overview of the solution, let's build the actual ListView Command Set to provide the document details functionality, transforming the old SharePoint Add-in model UI Extension.
 
 First of all, edit the manifest file and replace its content with the following one.
 
@@ -455,7 +455,7 @@ First of all, edit the manifest file and replace its content with the following 
 
 The updated manifest declares just one command, with unique name of *DOC_DETAILS*, with title 'Document Details', and with a custom icon image URL. Actually, the image is not a URL but a Base64 encoded image, in order to not have any dependency on external files. For the sake of simplicity, in the code excerpt the Base64 image is shortened.
 
-Now, update the element file to show the List View Command Set both in the command bar and in the ECB menu, by providing a value of *ClientSideExtension.ListViewCommandSet* in the *Location* attribute. Plus, remove the content of the *ClientSideComponentProperties* attribute, because the sample extension doesn't need any custom properties. Here you can see the new element file.
+Now, update the element file to show the ListView Command Set both in the command bar and in the ECB menu, by providing a value of *ClientSideExtension.ListViewCommandSet* in the *Location* attribute. Plus, remove the content of the *ClientSideComponentProperties* attribute, because the sample extension doesn't need any custom properties. Here you can see the new element file.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -471,7 +471,7 @@ Now, update the element file to show the List View Command Set both in the comma
 </Elements>
 ```
 
-It is now time to update the actual implementation of the List View Command Set by updating the *DocumentDetailsCommandSet.ts* file. First of all, replace the command unique name with the new one defined in the manifest. So, replace *COMMAND_1* with *DOC_DETAILS* in the *onInit*, *onExecute*, and *_onListViewStateChanged* methods and remove any logic related to the *COMMAND_2* extension, which does not exist anymore.
+It is now time to update the actual implementation of the ListView Command Set by updating the *DocumentDetailsCommandSet.ts* file. First of all, replace the command unique name with the new one defined in the manifest. So, replace *COMMAND_1* with *DOC_DETAILS* in the *onInit*, *onExecute*, and *_onListViewStateChanged* methods and remove any logic related to the *COMMAND_2* extension, which does not exist anymore.
 
 In the new SharePoint Framework implementation of the extension you will rely on the SharePoint Framework Dialog Framework to render a nice looking dialog window that will embed an MGT component to show detailed information about the selected file.
 
@@ -576,7 +576,7 @@ The public constructor of the dialog class accepts all the properties needed to 
 
 The *DocumentDetailsDialogContent* component is a really trivial React component that renders the `File` component of MGT and provides a "Close" button to close the dialog. 
 
-The *DocumentDetailsDialog* component is instantiated in the *onExecute* method of the List View Command Set. Moreover, the MGT library is initialized in the *onInit* method of the class by registering its global provider, relying on the types imported from `@microsoft/mgt-spfx`. In the following code excerpt you can see the updated *DocumentDetailsCommandSet.ts* file.
+The *DocumentDetailsDialog* component is instantiated in the *onExecute* method of the ListView Command Set. Moreover, the MGT library is initialized in the *onInit* method of the class by registering its global provider, relying on the types imported from `@microsoft/mgt-spfx`. In the following code excerpt you can see the updated *DocumentDetailsCommandSet.ts* file.
 
 ```TypeScript
 import { Providers, SharePointProvider } from '@microsoft/mgt-spfx';
@@ -655,6 +655,6 @@ export default class DocumentDetailsCommandSet extends BaseListViewCommandSet<{}
 ```
 
 Notice also that in this revised implementation the *onExecute* method is defined as an asynchronous method.
-In the following screenshot you can see the output of the List View Command Set in a sample SharePoint document library.
+In the following screenshot you can see the output of the ListView Command Set in a sample SharePoint document library.
 
-![The output of the SharePoint Framework List View Command Set.](./assets/From-UI-Extensions-to-List-View-Command-Sets/From-UI-Extension-to-List-View-Command-Set-spfx-output.png)
+![The output of the SharePoint Framework ListView Command Set.](./assets/From-UI-Extensions-to-ListView-Command-Sets/From-UI-Extension-to-ListView-Command-Set-spfx-output.png)

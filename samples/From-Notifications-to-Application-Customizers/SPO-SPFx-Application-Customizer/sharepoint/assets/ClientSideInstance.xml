@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="StatusBarFooter"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="4dca57ae-896c-48f9-b07b-4d2f3b952fbd"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </ClientSideComponentInstance>
+</Elements>

@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "nodeVersion": "16.18.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.1",
+    "libraryName": "spo-sp-fx-application-customizer",
+    "libraryId": "85967de6-6092-4d2c-a0ab-37b58438e1f3",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "spo-sp-fx-application-customizer",
+    "solutionShortDescription": "spo-sp-fx-application-customizer description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ListViewCommandSet"
+  }
+}
