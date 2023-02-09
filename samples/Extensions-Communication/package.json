@@ -13,9 +13,12 @@
   },
   "dependencies": {
     "@microsoft/decorators": "1.16.1",
+    "@microsoft/mgt-react": "^2.9.0",
+    "@microsoft/mgt-spfx": "^2.9.0",
     "@microsoft/sp-application-base": "1.16.1",
     "@microsoft/sp-core-library": "1.16.1",
     "@microsoft/sp-dialog": "1.16.1",
+    "@microsoft/sp-listview-extensibility": "1.16.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "tslib": "2.3.1"

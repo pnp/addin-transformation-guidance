@@ -6,21 +6,21 @@
     "default": {
       "pageUrl": "https://piasysdev.sharepoint.com/sites/AddInTransformationGuidanceSamples/Shared%20Documents/Forms/AllItems.aspx",
       "customActions": {
-        "a782a9b0-dffe-480d-918a-9c645c64583e": {
-          "location": "ClientSideExtension.ApplicationCustomizer",
+        "62d6fcda-986d-47fc-a162-b76a09aa95b9": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
           "properties": {
-            "testMessage": "Test message"
+            "targetServiceUrl": "https://service.url/"
           }
         }
       }
     },
-    "notificationHeader": {
+    "processDocument": {
       "pageUrl": "https://piasysdev.sharepoint.com/sites/AddInTransformationGuidanceSamples/Shared%20Documents/Forms/AllItems.aspx",
       "customActions": {
-        "a782a9b0-dffe-480d-918a-9c645c64583e": {
-          "location": "ClientSideExtension.ApplicationCustomizer",
+        "62d6fcda-986d-47fc-a162-b76a09aa95b9": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
           "properties": {
-            "testMessage": "Test message"
+            "targetServiceUrl": "https://service.url/"
           }
         }
       }

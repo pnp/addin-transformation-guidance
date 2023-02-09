@@ -300,7 +300,7 @@ The code excerpt illustrated above shows the main code excerpts of the *Document
 First of all, you can notice that the Extension is declared as a TypeScript class with name *DocumentDetailsCommandSet*, which inherits from the base type `BaseListViewCommandSet<IDocumentDetailsCommandSetProperties>`.
 The *BaseListViewCommandSet* type is provided by the base libraries of SharePoint Framework, while the interface *IDocumentDetailsCommandSetProperties* is defined just before the web part class declaration and it defines the configuration properties for your custom extension, if any.
 
-In the *OnInit* method of the Extension the code tries to retrieve a reference to a custom command extension with unique name of *COMMAND_1*. If the command exists, the code hides it as its initial status.
+In the *OnInit* method of the Extension, the code tries to retrieve a reference to a custom command extension with unique name of *COMMAND_1*. If the command exists, the code hides it as its initial status.
 
 ```TypeScript
     // initial state of the command's visibility

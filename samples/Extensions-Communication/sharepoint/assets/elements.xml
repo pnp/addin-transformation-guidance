@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
     <CustomAction
-        Title="DocumentDetails"
+        Title="ProcessDocument"
         RegistrationId="101"
         RegistrationType="List"
         Location="ClientSideExtension.ListViewCommandSet"
-        ClientSideComponentId="1602bb8e-cc1d-4417-ba7a-cc1b1d7d7022"
-        ClientSideComponentProperties="">
+        ClientSideComponentId="62d6fcda-986d-47fc-a162-b76a09aa95b9"
+        ClientSideComponentProperties="{&quot;targetServiceUrl&quot;:&quot;https://service.url/&quot;}">
     </CustomAction>
 </Elements>

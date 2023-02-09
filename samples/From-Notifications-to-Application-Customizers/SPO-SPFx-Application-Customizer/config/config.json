@@ -2,26 +2,17 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
   "bundles": {
-    "status-bar-footer-application-customizer": {
+    "notification-header-application-customizer": {
       "components": [
         {
-          "entrypoint": "./lib/extensions/statusBarFooter/StatusBarFooterApplicationCustomizer.js",
-          "manifest": "./src/extensions/statusBarFooter/StatusBarFooterApplicationCustomizer.manifest.json"
-        }
-      ]
-    },
-    "process-document-command-set": {
-      "components": [
-        {
-          "entrypoint": "./lib/extensions/processDocument/ProcessDocumentCommandSet.js",
-          "manifest": "./src/extensions/processDocument/ProcessDocumentCommandSet.manifest.json"
+          "entrypoint": "./lib/extensions/notificationHeader/NotificationHeaderApplicationCustomizer.js",
+          "manifest": "./src/extensions/notificationHeader/NotificationHeaderApplicationCustomizer.manifest.json"
         }
       ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "StatusBarFooterApplicationCustomizerStrings": "lib/extensions/statusBarFooter/loc/{locale}.js",
-    "ProcessDocumentCommandSetStrings": "lib/extensions/processDocument/loc/{locale}.js"
+    "NotificationHeaderApplicationCustomizerStrings": "lib/extensions/notificationHeader/loc/{locale}.js"
   }
 }

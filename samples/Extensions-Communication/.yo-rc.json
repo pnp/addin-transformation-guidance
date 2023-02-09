@@ -1,7 +1,7 @@
 {
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
-    "isCreatingSolution": true,
+    "isCreatingSolution": false,
     "nodeVersion": "16.18.1",
     "sdksVersions": {
       "@microsoft/microsoft-graph-client": "3.0.2",
@@ -9,7 +9,7 @@
     },
     "version": "1.16.1",
     "libraryName": "spo-sp-fx-application-customizer",
-    "libraryId": "6fc373e4-dfe6-4dfc-8aef-ebf42fca466f",
+    "libraryId": "85967de6-6092-4d2c-a0ab-37b58438e1f3",
     "environment": "spo",
     "packageManager": "npm",
     "solutionName": "spo-sp-fx-application-customizer",

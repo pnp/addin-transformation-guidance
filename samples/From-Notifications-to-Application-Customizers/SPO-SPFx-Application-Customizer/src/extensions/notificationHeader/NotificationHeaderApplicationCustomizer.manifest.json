@@ -1,8 +1,8 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
 
-  "id": "4dca57ae-896c-48f9-b07b-4d2f3b952fbd",
-  "alias": "StatusBarFooterApplicationCustomizer",
+  "id": "a782a9b0-dffe-480d-918a-9c645c64583e",
+  "alias": "NotificationHeaderApplicationCustomizer",
   "componentType": "Extension",
   "extensionType": "ApplicationCustomizer",
 
