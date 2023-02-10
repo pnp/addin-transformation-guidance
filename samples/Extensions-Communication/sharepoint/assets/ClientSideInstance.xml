@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-    <ClientSideComponentInstance
-        Title="ProcessDocument"
-        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
-        ListTemplateId="101"
-        Properties="{&quot;targetServiceUrl&quot;:&quot;https://service.url/&quot;}"
-        ComponentId="62d6fcda-986d-47fc-a162-b76a09aa95b9" />
-</Elements>

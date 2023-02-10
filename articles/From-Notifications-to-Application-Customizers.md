@@ -1,4 +1,4 @@
-# From Status Bars and Notifications to SPFx Application Customizers
+# From Status Bars and Notifications to SharePoint Framework Application Customizers
 
 In the SharePoint Add-in model you were used to rely on the JavaScript Object Model for SharePoint to show notifications and status bars using syntax like the following:
 

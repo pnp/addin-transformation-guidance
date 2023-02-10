@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.18.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.1",
+    "libraryName": "spo-sp-fx-dialog",
+    "libraryId": "d13e220c-b4ae-4d18-ac5f-8ef8c98e46f9",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "spo-sp-fx-dialog",
+    "solutionShortDescription": "spo-sp-fx-dialog description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

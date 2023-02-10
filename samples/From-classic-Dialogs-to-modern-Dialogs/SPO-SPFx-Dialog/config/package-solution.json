@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spo-sp-fx-dialog-client-side-solution",
+    "id": "d13e220c-b4ae-4d18-ac5f-8ef8c98e46f9",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "spo-sp-fx-dialog description"
+      },
+      "longDescription": {
+        "default": "spo-sp-fx-dialog description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spo-sp-fx-dialog Feature",
+        "description": "The feature that activates elements of the spo-sp-fx-dialog solution.",
+        "id": "767f2c31-4f8e-4ec6-be54-18bfe30aea0a",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spo-sp-fx-dialog.sppkg"
+  }
+}
