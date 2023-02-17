@@ -74,3 +74,10 @@ On the service side, if you are consuming Microsoft Graph, it will be responsibi
 
 > [!NOTE]
 > You can find additional information about the Microsoft Authentication Library reading ["Overview of the Microsoft Authentication Library (MSAL)"](https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-overview). You can find further details about the Microsoft.Identity.Web library reading the article ["Microsoft Identity Web authentication library"](https://learn.microsoft.com/en-us/azure/active-directory/develop/microsoft-identity-web). 
+
+## Recommended content 
+You can find additional information about this topic reading the following documents:
+* ["Connect to Azure AD-secured APIs in SharePoint Framework solutions"](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient)
+* ["Isolated web parts"](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/isolated-web-parts)
+* ["Overview of the Microsoft Authentication Library (MSAL)"](https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-overview)
+* ["Microsoft Identity Web authentication library"](https://learn.microsoft.com/en-us/azure/active-directory/develop/microsoft-identity-web)

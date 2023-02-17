@@ -658,3 +658,8 @@ Notice also that in this revised implementation the *onExecute* method is define
 In the following screenshot you can see the output of the ListView Command Set in a sample SharePoint document library.
 
 ![The output of the SharePoint Framework ListView Command Set.](./assets/From-UI-Extensions-to-ListView-Command-Sets/From-UI-Extension-to-ListView-Command-Set-spfx-output.png)
+
+## Recommended content 
+You can find additional information about this topic reading the following documents:
+* [Build your first ListView Command Set extension](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api)
+* [Use custom dialog boxes with SharePoint Framework Extensions](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/guidance/using-custom-dialogs-with-spfx)

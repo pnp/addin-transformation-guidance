@@ -456,3 +456,8 @@ You will promptly see the following output.
 ![The UI of SharePoint Framework Workbench to test SharePoint Framework components. The image shows how to add a custom web part to the workbench.](./assets/From-App-Parts-to-Modern-Web-Parts/From-App-Parts-to-Modern-Web-Parts-workbench-output.png)
 
 If you click on the pencil, just beside the web part, you will be able to show the property pane and to configure a search filter, which will be applied to the list of files rendered by the *FileList* control.
+
+## Recommended content 
+You can find additional information about this topic reading the following documents:
+* [Build your first SharePoint client-side web part](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part)
+

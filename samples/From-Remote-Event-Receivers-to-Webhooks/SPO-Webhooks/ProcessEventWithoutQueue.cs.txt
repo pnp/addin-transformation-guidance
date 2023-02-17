@@ -1,0 +1,138 @@
+using System.Net;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.Extensions.Logging;
+using PnP.Core.Model.SharePoint;
+using PnP.Core.Services;
+
+namespace PnP.SPO.Webhooks
+{
+    public class ProcessEvent
+    {
+        private readonly ILogger _logger;
+        private readonly IPnPContextFactory _pnpContextFactory;
+        private readonly AzureFunctionSettings _settings;
+
+        public ProcessEvent(IPnPContextFactory pnpContextFactory,
+            AzureFunctionSettings settings,
+            ILoggerFactory loggerFactory)
+        {
+            _pnpContextFactory = pnpContextFactory;
+            _settings = settings;
+            _logger = loggerFactory.CreateLogger<ProcessEvent>();
+        }
+
+        [Function("ProcessEvent")]
+        public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req,
+        string validationToken)
+        {
+            _logger.LogInformation("Webhook triggered!");
+
+            using (var pnpContext = await _pnpContextFactory.CreateAsync(
+                new Uri($"https://piasysdev.sharepoint.com/sites/AddInTransformationGuidanceSamples"),
+                CancellationToken.None))
+            {
+                var token = await pnpContext.AuthenticationProvider.GetAccessTokenAsync(
+                    new Uri("https://piasysdev.sharepoint.com"),
+                    new string[] { "https://piasysdev.sharepoint.com/.default" });
+            }
+
+            // Prepare the response object
+            HttpResponseData response = null;
+
+            if (!string.IsNullOrEmpty(validationToken))
+            {
+                // If we've got a validationtoken querystring argument
+                // We simply reply back with 200 (OK) and the echo of the validationtoken
+                response = req.CreateResponse(HttpStatusCode.OK);
+                response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
+                response.WriteString(validationToken);
+
+                return response;
+            }
+
+            // Otherwise we need to process the event
+
+            try 
+            {
+                // First of all, try to deserialize the request body
+                using (var sr = new StreamReader(req.Body))
+                {
+                    var jsonRequest = sr.ReadToEnd();
+
+                    var notifications = System.Text.Json.JsonSerializer.Deserialize<WebhookNotification>(jsonRequest, 
+                        new System.Text.Json.JsonSerializerOptions {
+                            PropertyNameCaseInsensitive = true
+                        });
+
+                    // If we have the input object
+                    if (notifications != null)
+                    {
+                        // Then process every single event in the notification body
+                        foreach (var notification in notifications.Value) 
+                        {
+                            _logger.LogInformation($"Notification for resource {notification.Resource} on site {notification.SiteUrl} for tenant {notification.TenantId}");
+
+                            using (var pnpContext = await _pnpContextFactory.CreateAsync(
+                                new Uri($"https://{_settings.TenantName}/{notification.SiteUrl}"), 
+                                CancellationToken.None))
+                            {
+                                pnpContext.GraphFirst = false;
+
+                                // Define a query for the last 100 changes happened, regardless the type of change (add, update, delete). Here code still does not provide the ChangeToken 
+                                var changeQuery = new PnP.Core.Model.SharePoint.ChangeQueryOptions(false, true) {
+                                    Item = true,                                   
+                                    FetchLimit = 100,
+                                };
+                                // Use GetChanges against the list with ID notification.Resource, which is the target list
+                                var targetList = pnpContext.Web.Lists.GetById(Guid.Parse(notification.Resource));
+                                var changes = await targetList.GetChangesAsync(changeQuery);
+
+                                // Get the change token, we should save it in a safe place
+                                // and provide it back while configuring the ChangeQueryOptions
+                                var lastChangeToken = changes.Last().ChangeToken;
+
+                                // Process all the retrieved changes
+                                foreach (var change in changes)
+                                {
+                                    _logger.LogInformation(change.GetType().FullName);
+
+                                    // Try to see if the current change is an IChangeItem
+                                    // meaning that it is a change that occurred on an item
+                                    if (change is IChangeItem changeItem)
+                                    {
+                                        // Get the date and time when the change happened
+                                        DateTime changeTime = changeItem.Time;
+                                        
+                                        // Check if we have the ID of the target item
+                                        if (changeItem.IsPropertyAvailable<IChangeItem>(i => i.ItemId))
+                                        {
+                                            var itemId = changeItem.ItemId;
+
+                                            // If that is the case, retrieve the item
+                                            var targetItem = targetList.Items.GetById(itemId);
+
+                                            if (targetItem != null)
+                                            {
+                                                // And log some information, just for the sake of making an example
+                                                _logger.LogInformation($"Processing changes for item '{targetItem.Title}' happened on {changeTime}");
+                                            }
+                                        }      
+                                    } 
+                                }
+                            }
+                        }
+                    }
+                }                
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            } 
+
+            // We need to return an OK response within 5 seconds
+            response = req.CreateResponse(HttpStatusCode.OK);
+            return response;
+        }
+    }
+}

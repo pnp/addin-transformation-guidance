@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SPO_Addin_Remote_Event_ReceiverWeb.Services.NewContactEventReceiver" CodeBehind="NewContactEventReceiver.svc.cs" %>

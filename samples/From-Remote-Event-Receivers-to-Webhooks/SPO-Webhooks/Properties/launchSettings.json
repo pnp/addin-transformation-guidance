@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "SPO_Webhooks": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7275",
+      "launchBrowser": false
+    }
+  }
+}

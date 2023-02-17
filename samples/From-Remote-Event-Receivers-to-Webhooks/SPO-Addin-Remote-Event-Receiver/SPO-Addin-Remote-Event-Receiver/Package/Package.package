@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="6dad04a6-4431-4645-9db0-ba2556934d8c" 
+        solutionId="6dad04a6-4431-4645-9db0-ba2556934d8c" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="SPO_Addin_Remote_Event_Receiver"
+        sharePointProductVersion="16.0">
+  <features>
+        <featureReference itemId="e354f557-67fa-4244-8a09-7e9104ad081f" />
+  </features>
+</package>

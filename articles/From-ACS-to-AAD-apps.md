@@ -71,6 +71,8 @@ The code excerpt reads the title of a target library and then uploads a new text
 > [!NOTE]
 > The code sample relies on PnP Framework Library to make it easier to get access to SharePoint Online. However, you can eventually use the SharePoint Online Client Side Object Model (CSOM) only. The purpose of the PnP Framework Library is just to speed up your development process and improve developers' quality of life.
 
+<a name="AADAppRegistration"></a>
+
 ## Registering the new application in Azure AD
 Since you have an ACS registered application, let's see how to transform it into a modern Azure AD application.
 
@@ -237,3 +239,10 @@ using (var context = am.GetContext(settings.SiteUrl))
 ```
 
 As like as it was in the previous sample, the code excerpt reads the title of a target library and then uploads a new text file into the target library. As you can see, the code looks almost like the former sample. However, in the latter sample you are using an Azure AD registered application and you are referring to an X.509 certificate for authentication. Aside from that, you are still using the PnP Framework Library and the CSOM syntax to access SharePoint Online. Thanks to this new approach, you now have an higher level of customisation for your application permissions and you are not anymore using ACS.
+
+## Recommended content 
+You can find additional information about this topic reading the following documents:
+* ["Understanding Resource Specific Consent for Microsoft Graph and SharePoint Online"](./Understanding-RSC-for-MSGraph-and-SharePoint-Online.md)
+* ["Understanding Resource Specific Consent for Microsoft Graph and SharePoint Online"](./Understanding-RSC-for-MSGraph-and-SharePoint-Online.md)
+* ["Consuming SharePoint Online in app-only mode via an Azure AD registered application"](#consuming-sharepoint-online-in-app-only-mode-via-an-azure-ad-registered-application)
+

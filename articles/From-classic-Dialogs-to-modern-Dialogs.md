@@ -264,3 +264,7 @@ export default class ShowDialog extends React.Component<IShowDialogProps, {}> {
 ```
 
 The *render* method of the component simply renders a button in the middle of the screen and by clicking on that button you activate the *_createTask* handler. Internally, the handler creates a new instance of the custom *TaskDialog*, providing the save and cancel handlers to the constructor. Then the *_createTask* handler invokes the asynchronous method *show* of the dialog component.
+
+## Recommended content 
+You can find additional information about this topic reading the following documents:
+* [Use custom dialog boxes with SharePoint Framework Extensions](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/guidance/using-custom-dialogs-with-spfx)

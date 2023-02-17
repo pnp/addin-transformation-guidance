@@ -16,7 +16,7 @@ SP.UI.Status.removeStatus(statusId);
 Nowadays, with SharePoint Framework, you can rely on the Application Customizer extensions to achieve the same result and even more. In this article you can find detailed information about how to transform notifications and status bars of the SharePoint Add-in model into SharePoint Framework modern solutions.
 
 > [!NOTE]
-> You can find further details about creating a SharePoint Framework Application Customizer by reading the documents [Build your first SharePoint Framework Extension (Hello World part 1)](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/build-a-hello-world-extension) and (Use page placeholders from Application Customizer (Hello World part 2))[https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions].
+> You can find further details about creating a SharePoint Framework Application Customizer by reading the documents [Build your first SharePoint Framework Extension (Hello World part 1)](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/build-a-hello-world-extension) and [Use page placeholders from Application Customizer (Hello World part 2)](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions).
 
 ## Setting the context
 Imagine that you need to provide to your users a notification about the result of a running process. In order to achieve this result, you can create an Application Customizer, which is a SharePoint Framework extension that allows you to add a custom header and/or footer to a modern page, as well as it eventually allows you to embed custom client-side code in the modern pages of SharePoint Online.
@@ -313,3 +313,9 @@ gulp serve
 ```
 
 A web browser session will start, you will have to accept to execute debug code and then you will the Notification header in action.
+
+## Recommended content 
+You can find additional information about this topic reading the following documents:
+* [Build your first SharePoint Framework Extension (Hello World part 1)](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/build-a-hello-world-extension)
+* [Use page placeholders from Application Customizer (Hello World part 2)](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions)
+

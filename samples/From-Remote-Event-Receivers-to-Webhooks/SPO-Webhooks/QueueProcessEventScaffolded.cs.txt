@@ -1,0 +1,22 @@
+using System;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Extensions.Logging;
+
+namespace PnP.SPO.Webhooks
+{
+    public class QueueProcessEvent
+    {
+        private readonly ILogger _logger;
+
+        public QueueProcessEvent(ILoggerFactory loggerFactory)
+        {
+            _logger = loggerFactory.CreateLogger<QueueProcessEvent>();
+        }
+
+        [Function("QueueProcessEvent")]
+        public void Run([QueueTrigger("spo-webhooks", Connection = "AzureStorageQueue")] string myQueueItem)
+        {
+            _logger.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
+        }
+    }
+}
