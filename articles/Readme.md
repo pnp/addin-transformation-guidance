@@ -28,4 +28,4 @@ Here is the list of arguments covered by this guidance, grouped by topic:
 
 Every single topic is covered from multiple angles with an article, a video, and practical samples that you can use to take inspiration from.
 
-At the end of this journey, you will be able to develop modern SharePoint Online solutions and you will not need anymore to rely on the SharePoint Add-in model.
+At the end of this journey, you will be able to develop modern SharePoint Online solutions and you will not need anymore to rely on the SharePoint Add-in Model.
