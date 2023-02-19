@@ -26,6 +26,6 @@ Here is the list of arguments covered by this guidance, grouped by topic:
     - [From SharePoint 2013 Workflows (WFM) to Power Automate](./From-WFM-to-Power-Automate.md)
     - [Publishing apps in the Microsoft 365 Store](./Publishing-apps-on-the-Microsoft-365-Store.md)
 
-Every single topic is covered from multiple angles. In fact, each topic is covered with an article, a video, and practical samples that you can use to take inspiration from.
+Every single topic is covered from multiple angles with an article, a video, and practical samples that you can use to take inspiration from.
 
 At the end of this journey, you will be able to develop modern SharePoint Online solutions and you will not need anymore to rely on the SharePoint Add-in model.
