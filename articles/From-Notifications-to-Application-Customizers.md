@@ -319,3 +319,5 @@ You can find additional information about this topic reading the following docum
 * [Build your first SharePoint Framework Extension (Hello World part 1)](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/build-a-hello-world-extension)
 * [Use page placeholders from Application Customizer (Hello World part 2)](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions)
 
+
+[Go back to the index](./Readme.md)

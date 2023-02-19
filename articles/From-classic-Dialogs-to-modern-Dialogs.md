@@ -268,3 +268,6 @@ The *render* method of the component simply renders a button in the middle of th
 ## Recommended content 
 You can find additional information about this topic reading the following documents:
 * [Use custom dialog boxes with SharePoint Framework Extensions](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/guidance/using-custom-dialogs-with-spfx)
+
+
+[Go back to the index](./Readme.md)

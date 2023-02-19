@@ -962,3 +962,6 @@ You can find additional information about this topic reading the following docum
 * [Get started with SharePoint webhooks](https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/get-started-webhooks)
 * [SharePoint webhooks sample reference implementation](https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/webhooks-reference-implementation)
 * [SharePoint list webhooks](https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/lists/overview-sharepoint-list-webhooks)
+
+
+[Go back to the index](./Readme.md)

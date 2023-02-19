@@ -663,3 +663,6 @@ In the following screenshot you can see the output of the ListView Command Set i
 You can find additional information about this topic reading the following documents:
 * [Build your first ListView Command Set extension](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api)
 * [Use custom dialog boxes with SharePoint Framework Extensions](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/guidance/using-custom-dialogs-with-spfx)
+
+
+[Go back to the index](./Readme.md)

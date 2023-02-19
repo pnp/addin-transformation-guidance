@@ -246,3 +246,5 @@ You can find additional information about this topic reading the following docum
 * ["Understanding Resource Specific Consent for Microsoft Graph and SharePoint Online"](./Understanding-RSC-for-MSGraph-and-SharePoint-Online.md)
 * ["Consuming SharePoint Online in app-only mode via an Azure AD registered application"](#consuming-sharepoint-online-in-app-only-mode-via-an-azure-ad-registered-application)
 
+
+[Go back to the index](./Readme.md)

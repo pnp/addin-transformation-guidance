@@ -461,3 +461,5 @@ If you click on the pencil, just beside the web part, you will be able to show t
 You can find additional information about this topic reading the following documents:
 * [Build your first SharePoint client-side web part](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part)
 
+
+[Go back to the index](./Readme.md)

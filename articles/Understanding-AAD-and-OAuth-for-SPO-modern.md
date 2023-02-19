@@ -81,3 +81,6 @@ You can find additional information about this topic reading the following docum
 * ["Isolated web parts"](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/isolated-web-parts)
 * ["Overview of the Microsoft Authentication Library (MSAL)"](https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-overview)
 * ["Microsoft Identity Web authentication library"](https://learn.microsoft.com/en-us/azure/active-directory/develop/microsoft-identity-web)
+
+
+[Go back to the index](./Readme.md)
