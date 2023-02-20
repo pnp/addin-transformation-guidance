@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{ac7f1666-9943-4cc4-81cf-90589dcdc26e}"
+       Name="CustomerCode"
+       DisplayName="Customer Code"
+       Type="Text"
+       Required="FALSE"
+       Group="PnP Columns">
+  </Field>
+</Elements>

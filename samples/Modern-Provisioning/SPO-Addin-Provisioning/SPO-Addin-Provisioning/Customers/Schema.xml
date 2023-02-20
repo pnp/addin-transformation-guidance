@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="Customers" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/Customers" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/" EnableContentTypes="TRUE">
+  <MetaData>
+    <ContentTypes>
+      
+      
+    <ContentTypeRef ID="0x0120" /><ContentType ID="0x01006F716FA02F3F485BA83E3CE5BD9EB06A" Name="Customer" Group="PnP Content Types" Description="Custom content type to define a Customer item" Inherits="TRUE" Version="0"><FieldRefs><FieldRef ID="{ac7f1666-9943-4cc4-81cf-90589dcdc26e}" DisplayName="Customer Code" Required="TRUE" Name="CustomerCode" /><FieldRef ID="{6dcb6494-aa2c-423c-9a77-2dafd95ee2ae}" DisplayName="Customer Email" Required="FALSE" Name="CustomerEmail" /><FieldRef ID="{f8818d0d-d464-4268-bff4-19b307616002}" DisplayName="Customer Type" Required="TRUE" Name="CustomerType" /></FieldRefs></ContentType></ContentTypes>
+    <Fields>
+      
+    <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="$Resources:core,Title;" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" /><Field ID="{ac7f1666-9943-4cc4-81cf-90589dcdc26e}" Name="CustomerCode" DisplayName="Customer Code" Type="Text" Required="FALSE" Group="PnP Columns"></Field><Field ID="{6dcb6494-aa2c-423c-9a77-2dafd95ee2ae}" Name="CustomerEmail" DisplayName="Customer Email" Type="Text" Required="FALSE" Group="PnP Columns"></Field><Field ID="{f8818d0d-d464-4268-bff4-19b307616002}" Name="CustomerType" DisplayName="Customer Type" Type="Choice" Required="FALSE" Group="PnP Columns"><CHOICES><CHOICE>Government</CHOICE><CHOICE>Small Business</CHOICE><CHOICE>Medium Business</CHOICE><CHOICE>Enterprise</CHOICE><CHOICE>Non-Profit</CHOICE></CHOICES></Field></Fields>
+    <Views>
+      
+      
+    <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitleNoMenu"></FieldRef></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="Modified" Ascending="FALSE"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View><View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <JSLink>clienttemplates.js</JSLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="CustomerCode" /><FieldRef Name="LinkTitle"></FieldRef><FieldRef Name="CustomerEmail" /><FieldRef Name="CustomerType" /></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="ID"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View></Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>

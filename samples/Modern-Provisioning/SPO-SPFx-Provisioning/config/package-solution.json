@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spo-sp-fx-provisioning-client-side-solution",
+    "id": "de2d1a39-600d-435a-8440-48381d5e797e",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "spo-sp-fx-provisioning description"
+      },
+      "longDescription": {
+        "default": "spo-sp-fx-provisioning description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spo-sp-fx-provisioning Feature",
+        "description": "The feature that activates elements of the spo-sp-fx-provisioning solution.",
+        "id": "4e275c1d-519f-4560-8883-11418c83ea6a",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spo-sp-fx-provisioning.sppkg"
+  }
+}

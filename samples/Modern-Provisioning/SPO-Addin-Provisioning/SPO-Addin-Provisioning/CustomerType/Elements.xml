@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{f8818d0d-d464-4268-bff4-19b307616002}"
+       Name="CustomerType"
+       DisplayName="Customer Type"
+       Type="Choice"
+       Required="FALSE"
+       Group="PnP Columns">
+    <CHOICES>
+      <CHOICE>Government</CHOICE>
+      <CHOICE>Small Business</CHOICE>
+      <CHOICE>Medium Business</CHOICE>
+      <CHOICE>Enterprise</CHOICE>
+      <CHOICE>Non-Profit</CHOICE>
+    </CHOICES>
+  </Field>
+</Elements>

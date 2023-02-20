@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="ad07aef1-7f60-491a-862f-027612d96bdc" 
+        solutionId="ad07aef1-7f60-491a-862f-027612d96bdc" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="SPO_Addin_Provisioning"
+        sharePointProductVersion="16.0">
+  <features>
+        <featureReference itemId="01fa7ddc-7dc0-432b-9c2c-fc8b5ffcff75" />
+  </features>
+</package>
