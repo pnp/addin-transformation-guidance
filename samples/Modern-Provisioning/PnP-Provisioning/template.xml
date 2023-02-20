@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2022/09/ProvisioningSchema">
+  <pnp:Preferences Generator="PnP.Framework, Version=1.11.2.0, Culture=neutral, PublicKeyToken=0d501f89f11b748c" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-C42C0644EDAD4821A31A0576D43FC721">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-C42C0644EDAD4821A31A0576D43FC721" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+      <pnp:SiteFields>
+        <Field ID="{f8818d0d-d464-4268-bff4-19b307616002}" Name="CustomerType" DisplayName="Customer Type" Type="Choice" Required="FALSE" Group="PnP Columns" SourceID="{e0c4f842-d65c-4d47-a829-49d10b674777}" StaticName="CustomerType">
+          <CHOICES>
+            <CHOICE>Government</CHOICE>
+            <CHOICE>Small Business</CHOICE>
+            <CHOICE>Medium Business</CHOICE>
+            <CHOICE>Enterprise</CHOICE>
+            <CHOICE>Non-Profit</CHOICE>
+          </CHOICES>
+        </Field>
+        <Field ID="{ac7f1666-9943-4cc4-81cf-90589dcdc26e}" Name="CustomerCode" DisplayName="Customer Code" Type="Text" Required="FALSE" Group="PnP Columns" SourceID="{e0c4f842-d65c-4d47-a829-49d10b674777}" StaticName="CustomerCode"></Field>
+        <Field ID="{6dcb6494-aa2c-423c-9a77-2dafd95ee2ae}" Name="CustomerEmail" DisplayName="Customer Email" Type="Text" Required="FALSE" Group="PnP Columns" SourceID="{e0c4f842-d65c-4d47-a829-49d10b674777}" StaticName="CustomerEmail"></Field>
+      </pnp:SiteFields>
+      <pnp:ContentTypes>
+        <pnp:ContentType DisplayFormClientSideComponentId="" DisplayFormClientSideComponentProperties="" NewFormClientSideComponentProperties="" EditFormClientSideComponentId="" EditFormClientSideComponentProperties="" ID="0x01006F716FA02F3F485BA83E3CE5BD9EB06A" Name="Customer" Description="Custom content type to define a Customer item" Group="PnP Content Types" NewFormUrl="" EditFormUrl="" DisplayFormUrl="" UpdateChildren="false">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" Required="true" UpdateChildren="true" />
+            <pnp:FieldRef ID="ac7f1666-9943-4cc4-81cf-90589dcdc26e" Name="CustomerCode" Required="true" UpdateChildren="true" />
+            <pnp:FieldRef ID="6dcb6494-aa2c-423c-9a77-2dafd95ee2ae" Name="CustomerEmail" UpdateChildren="true" />
+            <pnp:FieldRef ID="f8818d0d-d464-4268-bff4-19b307616002" Name="CustomerType" Required="true" UpdateChildren="true" />
+          </pnp:FieldRefs>
+        </pnp:ContentType>
+      </pnp:ContentTypes>
+      <pnp:Lists>
+        <pnp:ListInstance Title="Customers" Description="List of Customers" DocumentTemplate="" TemplateType="100" Url="Lists/Customers" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" ContentTypesEnabled="true" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Customers/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Customers/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Customers/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01006F716FA02F3F485BA83E3CE5BD9EB06A" Default="true" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{2EA9DA9A-4506-4C93-8CCF-0AADB3DD5F82}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Customers/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="CustomerCode" />
+                <FieldRef Name="CustomerEmail" />
+                <FieldRef Name="CustomerType" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" Required="true" DisplayName="Title" />
+            <pnp:FieldRef ID="ac7f1666-9943-4cc4-81cf-90589dcdc26e" Name="CustomerCode" Required="true" DisplayName="Customer Code" />
+            <pnp:FieldRef ID="6dcb6494-aa2c-423c-9a77-2dafd95ee2ae" Name="CustomerEmail" DisplayName="Customer Email" />
+            <pnp:FieldRef ID="f8818d0d-d464-4268-bff4-19b307616002" Name="CustomerType" Required="true" DisplayName="Customer Type" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

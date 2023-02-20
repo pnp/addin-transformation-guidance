@@ -5,7 +5,7 @@
     "id": "de2d1a39-600d-435a-8440-48381d5e797e",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
-    "skipFeatureDeployment": true,
+    "skipFeatureDeployment": false,
     "isDomainIsolated": false,
     "developer": {
       "name": "",
@@ -30,7 +30,15 @@
         "title": "spo-sp-fx-provisioning Feature",
         "description": "The feature that activates elements of the spo-sp-fx-provisioning solution.",
         "id": "4e275c1d-519f-4560-8883-11418c83ea6a",
-        "version": "1.0.0.0"
+        "version": "1.0.0.0",
+        "assets": {        
+          "elementManifests": [
+            "elements.xml"
+          ],
+          "elementFiles":[
+            "schema.xml"
+          ]
+        }
       }
     ]
   },

@@ -68,7 +68,7 @@ code .
 
 In the following image, you can see the outline of the generated SharePoint Framework solution.
 
-![The outline of the SharePoint Framework generated solution.](./assets/From-classic-Dialogs-to-modern-Dialogs/From-classic-Dialogs-to-modern-Dialogs-spfx-outline)
+![The outline of the SharePoint Framework generated solution.](./assets/From-classic-Dialogs-to-modern-Dialogs/From-classic-Dialogs-to-modern-Dialogs-spfx-outline.png)
 
 As you can see, under the *src/webparts* folder there is a subfolder with name *showDialog* that containes the basic scaffolding for the sample web part. Based on the choice made while generating the solution, the web part relies on React to render its user interface. As such, we can focus on the React component defined under the folder *components* of the web part subfolder.
 
