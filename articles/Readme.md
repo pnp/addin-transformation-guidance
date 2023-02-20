@@ -5,7 +5,7 @@ Reading the documents available in this guidance you can learn how to migrate an
 Here is the list of arguments covered by this guidance, grouped by topic:
 
 - Modern Provisioning
-    *-* [Modern provisioning of artifacts and Information Architecture](./Modern-Provisioning.md)
+    * [Modern provisioning of artifacts and Information Architecture](./Modern-Provisioning.md)
 - Modern Authentication and Authorization
     * [From Access Control Service applications to Azure Active Directory applications](./From-ACS-to-AAD-apps.md)
     - [Building Multi-tenant applications for SharePoint Online](./Multi-tenant-applications.md)
