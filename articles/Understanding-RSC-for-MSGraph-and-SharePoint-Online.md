@@ -143,7 +143,7 @@ Revoke-PnPAzureADAppSitePermission -PermissionId {permission-id}
 Once you have registered an AAD application with *Sites.Selected* application permission, either with Microsoft Graph, or with SharePoint Online, or with both you can then start consuming the selected site collections accordingly to the granted permissions.
 From a practical point of view, you simply need to request an application only access token from Azure AD and start consuming the selected site collections. If you will target a site, for which your application has been granted permissions, you will sucessfully make it happen. If you will target any other site collection, for which your application has not been granted permissions, your code will fail and you will see an "Access denied" exception.
 
-If you want to learn more about how to consume SharePoint Online via SharePoint REST API or via Microsoft Graph using an application only token, you can read the section [Consuming SharePoint Online in app-only mode via an Azure AD registered application](./From-ACS-to-AAD-apps.md#SPO-AppOnly-Token) of the article [Upgrading SharePoint applications from Azure Access Control Service to Azure Active Directory](./From-ACS-to-AAD-apps.md).
+If you want to learn more about how to consume SharePoint Online via SharePoint REST API or via Microsoft Graph using an application only token, you can read the section [Consuming SharePoint Online in app-only mode via an Azure AD registered application](./From-ACS-to-AAD-apps.md#consuming-sharepoint-online-in-app-only-mode-via-an-azure-ad-registered-application) of the article [Upgrading SharePoint applications from Azure Access Control Service to Azure Active Directory](./From-ACS-to-AAD-apps.md).
 
 
 > [!NOTE]
