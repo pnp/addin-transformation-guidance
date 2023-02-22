@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "consume-spo-via-client-code-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/consumeSpoViaClientCode/ConsumeSpoViaClientCodeWebPart.js",
+          "manifest": "./src/webparts/consumeSpoViaClientCode/ConsumeSpoViaClientCodeWebPart.manifest.json"
+        }
+      ]
+    },
+    "consume-spo-via-graph-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/consumeSpoViaGraph/ConsumeSpoViaGraphWebPart.js",
+          "manifest": "./src/webparts/consumeSpoViaGraph/ConsumeSpoViaGraphWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ConsumeSpoViaClientCodeWebPartStrings": "lib/webparts/consumeSpoViaClientCode/loc/{locale}.js",
+    "ConsumeSpoViaGraphWebPartStrings": "lib/webparts/consumeSpoViaGraph/loc/{locale}.js"
+  }
+}

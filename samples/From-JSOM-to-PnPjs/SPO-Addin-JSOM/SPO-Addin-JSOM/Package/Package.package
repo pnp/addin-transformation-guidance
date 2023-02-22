@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="d9575c77-ba23-476e-b3c9-5c25356fa9b1" 
+        solutionId="d9575c77-ba23-476e-b3c9-5c25356fa9b1" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="SPO_Addin_JSOM"
+        sharePointProductVersion="16.0">
+  <features>
+        <featureReference itemId="0e059d17-c384-4964-8ad0-289d97933c7f" />
+  </features>
+</package>
