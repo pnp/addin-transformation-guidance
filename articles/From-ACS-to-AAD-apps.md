@@ -202,6 +202,8 @@ Once you have added permissions to an application in Azure AD, you might need to
 
 By granting consent, the value of the *Status* column of the permissions will become "Granted for [name of your tenant]" and there will be a green check mark.
 
+<a name="SPO-AppOnly-Token"></a>
+
 ## Consuming SharePoint Online in app-only mode via an Azure AD registered application
 You are now ready to consume SharePoint Online via your newly registered Azure AD application.
 

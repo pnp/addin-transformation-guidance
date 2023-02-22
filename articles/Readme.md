@@ -9,7 +9,7 @@ Here is the list of arguments covered by this guidance, grouped by topic:
 - Modern Authentication and Authorization
     * [From Access Control Service applications to Azure Active Directory applications](./From-ACS-to-AAD-apps.md)
     * [Building Multi-tenant applications for SharePoint Online](./Multi-tenant-applications.md)
-    - [Understanding Resource Specific Consent (RSC)](./Understanding-RSC-for-MSGraph-and-SharePoint-Online.md)
+    * [Understanding Resource Specific Consent (RSC)](./Understanding-RSC-for-MSGraph-and-SharePoint-Online.md)
 - Customizing the modern UI
     * [From App Parts and classic Web Parts to modern client-side SPFx Web Parts](./From-App-Parts-to-Modern-Web-Parts.md)
     * [From UI Extensions to SPFx List View Command Set](./From-UI-Extensions-to-ListView-Command-Sets.md)
