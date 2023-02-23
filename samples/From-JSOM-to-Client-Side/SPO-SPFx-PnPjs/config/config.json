@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "use-pn-pjs-minimal-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/usePnPjsMinimal/UsePnPjsMinimalWebPart.js",
+          "manifest": "./src/webparts/usePnPjsMinimal/UsePnPjsMinimalWebPart.manifest.json"
+        }
+      ]
+    },
+    "use-pn-pjs-react-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/usePnPjsReact/UsePnPjsReactWebPart.js",
+          "manifest": "./src/webparts/usePnPjsReact/UsePnPjsReactWebPart.manifest.json"
+        }
+      ]
+    },
+    "use-pn-pjs-react-better-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/usePnPjsReactBetter/UsePnPjsReactBetterWebPart.js",
+          "manifest": "./src/webparts/usePnPjsReactBetter/UsePnPjsReactBetterWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "UsePnPjsMinimalWebPartStrings": "lib/webparts/usePnPjsMinimal/loc/{locale}.js",
+    "UsePnPjsReactWebPartStrings": "lib/webparts/usePnPjsReact/loc/{locale}.js",
+    "UsePnPjsReactBetterWebPartStrings": "lib/webparts/usePnPjsReactBetter/loc/{locale}.js"
+  }
+}

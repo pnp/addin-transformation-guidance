@@ -40,7 +40,7 @@ export default class ConsumeSpoViaGraphWebPart extends BaseClientSideWebPart<ICo
     return Version.parse('1.0');
   }
 
-  // Get list items using spHttpClient
+  // Get list items using MSGraphClientV3
   private _getDocuments = async (): Promise<ISPListItems> => {
     // Get the REST response of the SharePoint REST API and return as collection of items
     const graphClient: MSGraphClientV3 = await this.context.msGraphClientFactory.getClient("3");

@@ -16,7 +16,7 @@ Here is the list of arguments covered by this guidance, grouped by topic:
     * [From status bars and notifications to SPFx Application Customizers](./From-Notifications-to-Application-Customizers.md)
     * [From classic dialogs to modern dialogs with SharePoint Framework](./From-classic-Dialogs-to-modern-Dialogs.md)
 - Building modern SharePoint Online solutions
-    - [From SharePoint JavaScript Object Model to PnPjs](./From-JSOM-to-PnPjs.md)
+    * [From SharePoint JavaScript Object Model to Client-side code and PnPjs](./From-JSOM-to-Client-Side.md)
     - [From Client Side Object Model (CSOM) to PnP Framework and PnP Core SDK](./From-CSOM-to-PnP-Libraries.md)
     - [From XSLT rendering to List View Formatting](./From-XSLT-to-List-View-Formatting.md)
     * [From Remote Event Receivers to SharePoint Online Webhooks and Microsoft Graph Webhooks](./From-Remote-Event-Receivers-to-Webhooks.md)

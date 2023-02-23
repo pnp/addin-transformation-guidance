@@ -32,16 +32,17 @@ export default class ConsumeSpoViaClientCodeWebPart extends BaseClientSideWebPar
   }
 
   protected async onInit(): Promise<void> {
+    await super.onInit();
+
     // Load all the documents onInit
     this._docs = await this._getDocuments();
-    return super.onInit();
   }
 
   protected get dataVersion(): Version {
     return Version.parse('1.0');
   }
 
-  // Get list items using spHttpClient
+  // Get list items using SPHttpClient
   private _getDocuments = async (): Promise<ISPListItems> => {
     // Get the REST response of the SharePoint REST API and return as collection of items
     return this.context.spHttpClient.get(this.context.pageContext.web.absoluteUrl + 
