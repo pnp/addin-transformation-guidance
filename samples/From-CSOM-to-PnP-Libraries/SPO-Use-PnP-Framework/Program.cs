@@ -1,10 +1,10 @@
 ﻿using Microsoft.SharePoint.Client;
 using PnP.Framework;
 
-var clientId = "1e1e625d-b563-45b0-bb08-000133827bfb";
-var tenantId = "6c94075a-da0a-4c6a-8411-badf652e8b53";
+var clientId = "<client-Id>";
+var tenantId = "<tenant-Id>";
 var redirectUrl = "http://localhost";
-var siteUrl = "https://piasysdev.sharepoint.com/sites/AddInTransformationGuidanceSamples";
+var siteUrl = "https://contoso.sharepoint.com/sites/TargetSite";
 
 // Create an instance of the AuthenticationManager type
 var authManager = AuthenticationManager.CreateWithInteractiveLogin(clientId, redirectUrl, tenantId);
