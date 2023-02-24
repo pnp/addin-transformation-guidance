@@ -1,13 +1,61 @@
 # Upgrading your code from SharePoint Client Side Object Model (CSOM) to the PnP Libraries
 
-In SharePoint classic solution, most likely you have been using the Client Side Object Model (CSOM) for .NET Framework as the primary client library for consuming SharePoint data. CSOM has been available for many years with different flavors targeting different versions of SharePoint on-premises or SharePoint Online. Since 2021, Microsoft released a new version of CSOM for SharePoint Online that targets .NET Standard 2.0 and as such can be referenced in .NET Framework 4.5+, .NET Core 2.0+, and .NET 5.0/6.0/7.0/8.0.
+In SharePoint classic solution, most likely you have been using the Client Side Object Model (CSOM) for .NET Framework as the primary client library for consuming SharePoint data. CSOM has been available for many years with different flavors targeting different versions of SharePoint on-premises and SharePoint Online. Since 2021, Microsoft released a new version of CSOM for SharePoint Online that targets .NET Standard 2.0 and as such can be referenced in .NET Framework 4.5+, .NET Core 2.0+, and .NET 5.0/6.0/7.0/8.0.
 
-In order to use CSOM, you simply need to reference the *Microsoft.SharePointOnline.CSOM* Nuget package, create a *ClientContext* object, configure authentication, and start consuming the SharePoint Online data. For authentication, in CSOM there used to be support for *SharePointOnlineCredentials* type in order to leverage username and password authentication. However, since when Microsoft switched to modern authentication the username and password authentication is not anymore supported, and you should rely on OAuth and modern authentication. In the following code excerpt you can see an example of using CSOM with modern authentication.
+In order to use CSOM, you simply need to reference the *Microsoft.SharePointOnline.CSOM* NuGet package, create a *ClientContext* object, configure authentication, and start consuming the SharePoint Online data. For authentication, in CSOM there used to be support for *SharePointOnlineCredentials* type in order to leverage username and password authentication with SharePoint Online. However, since when Microsoft switched to modern authentication the username and password authentication is not anymore supported, and you should rely on OAuth and modern authentication. In the following code excerpt you can see an example of using plain CSOM with modern authentication via Microsoft Authentication Library (MSAL).
 
 ```CSharp
+using Microsoft.SharePoint.Client;
+using Microsoft.Identity.Client;
+
+var clientId = "<client-Id>";
+var tenantId = "<tenant-Id>";
+var authority = $"https://login.microsoftonline.com/{tenantId}/";
+var redirectUri = "http://localhost";
+
+var siteUrl = new Uri("https://contoso.sharepoint.com/sites/TargetSite");
+
+var accessToken = await AcquireTokenAsync(siteUrl);
+
+using (var context = new ClientContext(siteUrl))
+{
+    context.ExecutingWebRequest += async (sender, e) =>
+    {
+        // Insert the access token in the request
+        e.WebRequestExecutor.RequestHeaders["Authorization"] = "Bearer " + accessToken;
+    };
+
+    // Read web properties
+    var web = context.Web;
+    context.Load(web, w => w.Id, w => w.Title);
+    await context.ExecuteQueryAsync();
+
+    Console.WriteLine($"{web.Id} - {web.Title}");
+
+    // Retrieve a list by title together with selected properties
+    var documents = web.Lists.GetByTitle("Documents");
+    context.Load(documents, d => d.Id, d => d.Title);
+    await context.ExecuteQueryAsync();
+
+    Console.WriteLine($"{documents.Id} - {documents.Title}");
+
+    // Retrieve the top 10 items from the list
+    var query = CamlQuery.CreateAllItemsQuery(10);
+    var items = documents.GetItems(query);
+    context.Load(items);
+    await context.ExecuteQueryAsync();
+
+    // Browse through all the items
+    foreach (var i in items)
+    {
+        Console.WriteLine($"{i.Id} - {i["Title"]}");
+    }     
+}
 ```
 
-https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/using-csom-for-dotnet-standard
+The *AcquireTokenAsync* method relies on MSAL to retrieve an access token throuhg interactive authentication. The implementation of the method is not fundamental in this context, but you will find it in the [sample about CSOM associated with this article](../samples/From-CSOM-to-PnP-Libraries/SPO-Use-CSOM/).
+
+In the upcoming sections, you will see how to improve the quality, readability, and maintainability of your code using some modern .NET libraries like PnP Framework and PnP Core SDK.
 
 ## Introducing the PnP Framework library
 The PnP Framework library (released as v. 1.0 on January 2021) is the evolution of CSOM and of an old library called PnP Sites Core (now retired and archived). The PnP Framework library targets .NET Standard 2.0 and .NET 5.0/6.0/7.0, so you can use it on any platform (Windows, Linux, MacOS) and in any cloud-based service like Azure App Services, Azure Functions, Containers, etc.
