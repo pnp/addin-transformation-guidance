@@ -8,7 +8,7 @@ In this article you can find detailed information about how to transform the pro
 > You can find further details about the SharePoint Feature Framework by reading the document [SharePoint Features schemas](https://learn.microsoft.com/en-us/sharepoint/dev/schema/sharepoint-features-schemas).
 
 ## The SharePoint Add-in model solution to migrate from
-For example, imagine that you have a SharePoint Add-in model solution where you created a set of custom Site Columns and a custom Content Type that relies on those columns and that defines a Customer entity. In the following screenshot you can see how the solution looks like in Visual Studio.
+For example, imagine that you have a SharePoint Add-in model solution where you created a set of custom Site Columns and a custom Content Type that relies on those columns and that defines a *Customer* entity. In the following screenshot you can see how the solution looks like in Visual Studio.
 
 ![The outline of a SharePoint Add-in Model solution in Visual Studio. On the left, there is the Packaging Explorer to see what will be included in the deployment package. In the middle of the screen, there is the outline of a feature that will be provisioned onto the target site. On the right, there is the outline of the solution with three custom columns, one custom content type, and a custom list definition.](./assets/Modern-Provisioning/Modern-Provisioning-vs-addin-outline.png)
 
@@ -63,7 +63,7 @@ In the following code excerpt you can see the definition of the custom columns a
 </Elements>
 ```
 
-While in the following code excerpt you can see the definition of the custom list template for the list of Customers.
+While in the following code excerpt you can see the definition of the custom list template for the list of *Customers*.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -82,7 +82,7 @@ While in the following code excerpt you can see the definition of the custom lis
 </Elements>
 ```
 
-Lastly in the following code excerpt you can see the definition of a list instance of the custom list of customers.
+Lastly, in the following code excerpt you can see the definition of a list instance of the custom list of customers.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -92,7 +92,7 @@ Lastly in the following code excerpt you can see the definition of a list instan
 ```
 
 Inside Visual Studio, you also have a graphical designer that allows you to define the structure of the content type and of the list, as well as of the custom feature. 
-Once you will deploy the SharePoint Add-in solution onto a target site collection, you will find the artifacts provisioned in the SharePoint-hosted site of the SharePoint Add-in.
+Once you will deploy the SharePoint Add-in solution onto a target SharePoint site collection, you will find the artifacts provisioned in the SharePoint-hosted site of the SharePoint Add-in.
 
 The main limitations of the just described technique are the following ones:
 * The artifacts are deployed in the SharePoint-hosted site and not in the actual site collection that you extended with your solution. In case you want to provisiong the artifacts in the actual site collection, you should rely on other techniques like remote provisioning (that we will cover later in this article).
@@ -130,7 +130,7 @@ code .
 
 In the following image, you can see the outline of the generated SharePoint Framework solution.
 
-![The outline of the SharePoint Framework generated solution.](./assets/Modern-Provisioning/Modern-Provisioning-spfx-outline.png)
+![The outline of the SharePoint Framework generated solution. There are auto-generated folders like config, src, teams, and the common client-side project files like package.json, tsconfig.json, etc.](./assets/Modern-Provisioning/Modern-Provisioning-spfx-outline.png)
 
 Now, under the root folder of the scaffolded solution create a folder with name *sharepoint* and a subfolder with name *assets*. Inside the *assets* folder you can now create an *elements.xml* file and a *schema.xml* file. In the *elements.xml* file you can copy the artifacts defintions that you created in the SharePoint Add-in solution using the SharePoint Feature Framework syntax. Here follows an example of the content of the *elements.xml* file.
 
@@ -324,7 +324,7 @@ Open or create a new Site Collection and browse to the *"Site Contents"* page. C
 
 It is interesting and important to notice that the artifacts provisioned by the SharePoint Framework solution are now defined in the actual site that you extended and not in an app-related site. Moreover, if you will remove the custom solution from the site, your data structure and content will stay alive and you will not loose any important data. 
 
-However, as like as it was with the SharePoint Add-in Model provisioning, in case you will need to maintain the artifacts during the lifecycle of your project, every now and then you will have to struggle a bit.
+However, as like as it was with the SharePoint Add-in Model provisioning, in case you will need to maintain the artifacts, every now and then during the lifecycle of your project, you will have to struggle a bit.
 
 ## Provisioning Artifacts with the PnP Provisioning Engine
 In order to have the best provisioning experience, with full set of capabilities, maintenance, and lifecycle management you should rely on the so called "remote provisioning". The remote provisioning model relies on using custom code that creates and maintains the artifacts on the target environment. You can write your own custom code, using the SharePoint Client Object Model, or the SharePoint REST APIs, or the Microsoft Graph, or any other technique of your choice.
@@ -415,9 +415,9 @@ Invoke-PnPSiteTemplate -Path .\template.xml
 The *Connect-PnPOnline* cmdlet opens a connection with the target site, while the *Invoke-PnPSiteTemplate* cmdlet does the actual provisioning and internally relies on the PnP Framework library, which implements the PnP Provisioning Engine. 
 
 > [!NOTE]
-> You can find further information about the PnP Framework library in the document [PnP Framework documentation](https://pnp.github.io/pnpframework/).
+> You can find further information about the PnP Framework library in the document [PnP Framework documentation](https://pnp.github.io/pnpframework/) or by reading the article [Upgrading your code from SharePoint Client Side Object Model (CSOM) to the PnP Libraries](./From-CSOM-to-PnP-Libraries.md).
 
-What makes this approach the best for provisioning artifacts is that with remote provisioning, and specifically with the PnP Provisioning Engine, you can also maintain your information architecture and artifacts on the go. If you update the XML provisioning template and you invoke the *Invoke-PnPSiteTemplate* cmdlet multiple times, the engine will take care of updating the target site with the latest definition of the artifacts, applying delta changes and synchronozing the data structure on the target with the latest release of the template. From a maintenance point of view, this is a killer feature.
+What makes this approach the best for provisioning artifacts is that with remote provisioning, and specifically with the PnP Provisioning Engine, you can also maintain your information architecture and artifacts on the go. If you update the XML provisioning template and you invoke the *Invoke-PnPSiteTemplate* cmdlet multiple times, the engine will take care of updating the target site with the latest definition of the artifacts, applying delta changes and synchronozing the data structure on the target site with the latest release of the template. From a maintenance point of view, this is definitely a killer feature.
 
 One more thing to highlight is that with the PnP Provisioning Engine you can also graphically design your artifacts, using the web browser and a source template site. Once you have defined your artifacts in the template site, still using PnP PowerShell, you can easily extract the XML provisioning template from the site using the following PowerShell cmdlets:
 
@@ -437,7 +437,7 @@ Now you have plenty of options to automate and synchronize the provisioning of a
 
 ## Recommended content 
 You can find additional information about this topic reading the following documents:
-* [https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/provision-sp-assets-from-package](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/provision-sp-assets-from-package)
+* [Provision SharePoint assets from your SharePoint client-side web part](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/provision-sp-assets-from-package)
 * [Tenant-scoped solution deployment for SharePoint Framework solutions](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/tenant-scoped-deployment)
 * [Use the site collection app catalog](https://learn.microsoft.com/en-us/sharepoint/dev/general-development/site-collection-app-catalog)
 * [PnP PowerShell](https://pnp.github.io/powershell/)

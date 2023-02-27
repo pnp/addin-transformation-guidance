@@ -1,6 +1,6 @@
 # SharePoint Online Add-in Model Transformation to Modern Development Guidance
-This is the main index of a developer transformation guidance that will help you transition from the SharePoint Online Add-in model to the modern development of SharePoint Online.
-Reading the documents available in this guidance you can learn how to migrate and transform your existing solutions, built with the SharePoint Online Add-in model, to the new modern experience based on SharePoint Framework, Azure Active Directory, Microsoft Graph, and the Microsoft Power Platform.
+This is the main index of a developer transformation guidance that will help you transition from the SharePoint Online Add-in model and the classic development model to the modern development of SharePoint Online.
+Reading the documents available in this guidance you can learn how to migrate and transform your existing solutions, built with the SharePoint Online Add-in model and SharePoint classic development techniques, to the new modern experience based on SharePoint Framework, Azure Active Directory, Microsoft Graph, and the Microsoft Power Platform.
 
 Here is the list of arguments covered by this guidance, grouped by topic:
 
@@ -17,7 +17,7 @@ Here is the list of arguments covered by this guidance, grouped by topic:
     * [From classic dialogs to modern dialogs with SharePoint Framework](./From-classic-Dialogs-to-modern-Dialogs.md)
 - Building modern SharePoint Online solutions
     * [From SharePoint JavaScript Object Model to Client-side code and PnPjs](./From-JSOM-to-Client-Side.md)
-    - [From Client Side Object Model (CSOM) to PnP Framework and PnP Core SDK](./From-CSOM-to-PnP-Libraries.md)
+    * [From Client Side Object Model (CSOM) to PnP Framework and PnP Core SDK](./From-CSOM-to-PnP-Libraries.md)
     - [From XSLT rendering to List View Formatting](./From-XSLT-to-List-View-Formatting.md)
     * [From Remote Event Receivers to SharePoint Online Webhooks and Microsoft Graph Webhooks](./From-Remote-Event-Receivers-to-Webhooks.md)
     - [From SharePoint-hosted apps to client-side applications](./From-SharePoint-Hosted-to-Client-Side.md)
