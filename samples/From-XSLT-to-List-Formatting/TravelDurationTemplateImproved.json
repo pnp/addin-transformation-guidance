@@ -1,0 +1,53 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "div",
+    "style": {
+      "box-sizing": "border-box",
+      "padding": "0 2px",
+      "overflow": "hidden",
+      "text-overflow": "ellipsis"
+    },
+    "attributes": {
+      "class": {
+        "operator": ":",
+        "operands": [
+          {
+            "operator": "<=",
+            "operands": [
+              "[$TravelDuration]",
+              "3"
+            ]
+          },
+          "sp-css-backgroundColor-BgMintGreen sp-css-borderColor-MintGreenFont sp-field-fontSizeSmall sp-css-color-MintGreenFont",
+          {
+            "operator": ":",
+            "operands": [
+              {
+                "operator": "==",
+                "operands": [
+                  "[$TravelDuration]",
+                  "4"
+                ]
+              },
+              "sp-css-backgroundColor-BgGold sp-css-borderColor-GoldFont sp-field-fontSizeSmall sp-css-color-GoldFont",
+              {
+                "operator": ":",
+                "operands": [
+                  {
+                    "operator": "==",
+                    "operands": [
+                      "[$TravelDuration]",
+                      "5"
+                    ]
+                  },
+                  "sp-css-backgroundColor-BgDustRose sp-css-borderColor-DustRoseFont sp-field-fontSizeSmall sp-css-color-DustRoseFont",
+                  ""
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "txtContent": "[$TravelDuration]"
+  }
