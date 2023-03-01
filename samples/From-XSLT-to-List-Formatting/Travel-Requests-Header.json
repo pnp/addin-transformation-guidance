@@ -1,0 +1,53 @@
+{
+    "elmType": "div",
+    "attributes": {
+        "class": "ms-bgColor-themePrimary ms-fontColor-white"
+    },
+    "style": {
+        "width": "99%",
+        "margin": "10px",
+        "border": "1px solid",
+        "padding": "10px"
+    },
+    "children": [
+        {
+            "elmType": "div",
+            "style": {
+                "display": "flex",
+                "box-sizing": "border-box",
+                "align-items": "center"
+            },
+            "children": [
+                {
+                    "elmType": "img",
+                    "attributes": {
+                      "src": "=getUserImage('[$Requester.email]','medium')"
+                    },
+                    "style": {
+                      "border-radius": "50%",
+                      "margin-bottom": "10px"
+                    }
+                  }
+            ]
+        },
+        {
+            "elmType": "div",
+            "attributes": {
+                "class": "ms-fontColor-white ms-fontWeight-bold ms-fontSize-24"
+            },
+            "style": {
+                "box-sizing": "border-box",
+                "width": "100%",
+                "text-align": "left",
+                "padding": "21px 12px",
+                "overflow": "hidden"
+            },
+            "children": [
+                {
+                    "elmType": "div",
+                    "txtContent": "='Travel request to ' + [$Destination.DisplayName]"
+                }
+            ]
+        }
+    ]
+}

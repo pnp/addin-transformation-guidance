@@ -231,7 +231,175 @@ If you want to do more, you can click on *"Advanced mode"* and define a fully cu
 >[!NOTE]
 >You can find lot of useful samples about list view formatting browsing the GitHub repository [SharePoint List Formatting Samples](https://github.com/pnp/List-Formatting) and specifically the [list view formatting samples](https://github.com/pnp/List-Formatting/tree/master/view-samples).
 
-## PnP Template ...
+## List Form Formatting
+One more option that you have is to customize the form of a list or library, defining a custom header, footer, or body. In fact, if you are in a list you can simply display the properties of any item and then click on the *"Edit Form"* command in top right corner of the screen and select the *"Configure layout"* option, like illustrated in the following screenshot.
+
+![The "Edit form" command to customize the rendering of list item form.](./assets/From-XSLT-to-List-Formatting/From-XSLT-to-List-Formatting-form-formatting-ui-01.png)
+
+A side panel will show up on the right and you will be able to configure a custom JSON to customize the rendering of header, footer, or body. In the following screenshot you can see how the panel looks like.
+
+![The "Format" panel to customize the rendering of list item header, footer, or body.](./assets/From-XSLT-to-List-Formatting/From-XSLT-to-List-Formatting-form-formatting-ui-02.png)
+
+The same behavior applies to document libraries, but in order to activate the formatting panel you have to select a document, click on the three dots (ECB menu), select More, and then Properties. From the document property pane you can then choose the *"Edit Form"* and the *"Configure layout"* option.
+
+Now, let's see what kind of customizations you can apply using this capability. For the sake of simplicity, keep on using the "Travel requests" list created in the previous sections and edit the header of the list items. For example, let's assume that you want to replace the default header with a custom box that shows the requester's avatar and the destination of the trip. In the following screenshot you can see the output.
+
+![The UI of the header customization, showing the avatar of the requester and the destination of the trip in a box.](./assets/From-XSLT-to-List-Formatting/From-XSLT-to-List-Formatting-form-formatting-ui-03.png)
+
+While in the following code excerpt you can see the JSON template to achive the above result.
+
+```JSON
+{
+    "elmType": "div",
+    "attributes": {
+        "class": "ms-bgColor-themePrimary ms-fontColor-white ms-borderColor-neutralTertiary"
+    },
+    "style": {
+        "width": "99%",
+        "margin": "10px",
+        "border": "1px solid",
+        "padding": "10px"
+    },
+    "children": [
+        {
+            "elmType": "div",
+            "style": {
+                "display": "flex",
+                "box-sizing": "border-box",
+                "align-items": "center"
+            },
+            "children": [
+                {
+                    "elmType": "img",
+                    "attributes": {
+                      "src": "=getUserImage('[$Requester.email]','medium')"
+                    },
+                    "style": {
+                      "border-radius": "50%",
+                      "margin-bottom": "10px"
+                    }
+                  }
+            ]
+        },
+        {
+            "elmType": "div",
+            "attributes": {
+                "class": "ms-fontColor-white ms-fontWeight-bold ms-fontSize-24"
+            },
+            "style": {
+                "box-sizing": "border-box",
+                "width": "100%",
+                "text-align": "left",
+                "padding": "21px 12px",
+                "overflow": "hidden"
+            },
+            "children": [
+                {
+                    "elmType": "div",
+                    "txtContent": "='Travel request to ' + [$Destination.DisplayName]"
+                }
+            ]
+        }
+    ]
+}
+```
+
+The JSON template defines an HTML DIV element with the *primary* color of the current theme as the background color, the *white* color for the text, and a solid border of 1 pixel.
+
+```JSON
+"elmType": "div",
+"attributes": {
+    "class": "ms-bgColor-themePrimary ms-fontColor-white ms-borderColor-neutralTertiary"
+},
+"style": {
+    "width": "99%",
+    "margin": "10px",
+    "border": "1px solid",
+    "padding": "10px"
+}
+```
+
+Then there are two DIV elements as children of the above DIV. The first DIV on the left renders the image of the requester user.
+
+```JSON
+{
+    "elmType": "div",
+    "style": {
+        "display": "flex",
+        "box-sizing": "border-box",
+        "align-items": "center"
+    },
+    "children": [
+        {
+            "elmType": "img",
+            "attributes": {
+              "src": "=getUserImage('[$Requester.email]','medium')"
+            },
+            "style": {
+              "border-radius": "50%",
+              "margin-bottom": "10px"
+            }
+          }
+    ]
+}
+```
+
+While the second DIV renders a custom string with the name of the destination.
+
+```JSON
+{
+    "elmType": "div",
+    "attributes": {
+        "class": "ms-fontColor-white ms-fontWeight-bold ms-fontSize-24"
+    },
+    "style": {
+        "box-sizing": "border-box",
+        "width": "100%",
+        "text-align": "left",
+        "padding": "21px 12px",
+        "overflow": "hidden"
+    },
+    "children": [
+        {
+            "elmType": "div",
+            "txtContent": "='Travel request to ' + [$Destination.DisplayName]"
+        }
+    ]
+}
+```
+
+Notice the syntax used to read properties of the current item, based on square brackets and the dollar ($) symbol to reference a field, eventually specifying detailed properties of the field, like the *email* for the *$Requester* or the *DisplayName* for the *$Destination*. Notice also that you can rely on custom functions like *getUserImage* to retrieve advanced information from the fields of the selected item.
+
+The custom footer is customizable as like as the header, using exactly the same approach as before.
+
+On the contrary, the body can be customized declaring one or more custom sections and one or more columns for each section. However, keep into account that a column can only be referenced in one section, and if you will not reference a column in any section, it will automatically show up in the last section. Likewise, new columns added to the list or library will be automatically listed in the last column.
+
+![The UI of the custom body with two sections: "Main information" with Title, Requester, and Destination and "Others" with all the reminder fields.](./assets/From-XSLT-to-List-Formatting/From-XSLT-to-List-Formatting-form-formatting-ui-04.png)
+
+In the following code excerpt you can see a JSON template for a body with a "More information" section, made of fields Title, Requester, and Destination, and another catch-all section with name "Others".
+
+```JSON
+{
+    "sections": [
+        {
+            "displayname": "Main information",
+            "fields": [
+                "Title",
+                "Requester",
+                "Destination"
+            ]
+        },
+        {
+            "displayname": "Others",
+            "fields": []
+        }
+    ]
+}
+```
+
+Notice that every *section* object is made of a *displayname* and an array of *fields*.
+
+## PnP Provisioning and JSON formatting
 One last important thing to be aware of when working with List Formatting is that if you extract a site template or a list template using the PnP Provisioning Engine, the engine will also export any custom column formatting or list view formatting and store them in *CustomFormatter* attributes for columns or elements for views. As such, you can customize your columns and list views, export the customization, and apply it back to your production and/or customers' sites using a bunch of PowerShell scripting.
 
 >[!NOTE]
@@ -257,7 +425,9 @@ Notice that the extraction and the application of the template can even occur ac
 You can find additional information about this topic reading the following documents:
 * [Use column formatting to customize SharePoint](https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/column-formatting)
 * [Use view formatting to customize SharePoint](https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/view-formatting)
+* [Configure the list form](https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/list-form-configuration)
 * [List Formatting Samples](https://pnp.github.io/List-Formatting/)
 * [Formatting syntax reference](https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/formatting-syntax-reference)
+* [Advanced formatting concepts](https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/formatting-advanced?source=recommendations)
 
 [Go back to the index](./Readme.md)

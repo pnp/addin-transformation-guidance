@@ -1,0 +1,16 @@
+{
+    "sections": [
+        {
+            "displayname": "Main information",
+            "fields": [
+                "Title",
+                "Requester",
+                "Destination"
+            ]
+        },
+        {
+            "displayname": "Others",
+            "fields": []
+        }
+    ]
+}
