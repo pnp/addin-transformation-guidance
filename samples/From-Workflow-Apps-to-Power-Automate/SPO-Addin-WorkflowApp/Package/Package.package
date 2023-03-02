@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="c0b01f6e-9567-4b27-95b6-a899b0c6dfd8" 
+        solutionId="c0b01f6e-9567-4b27-95b6-a899b0c6dfd8" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="SPO_Addin_WorkflowApp"
+        sharePointProductVersion="16.0">
+  <features>
+        <featureReference itemId="7f700f9d-503c-452b-8d5b-d6cce8fc9690" />
+  </features>
+</package>
