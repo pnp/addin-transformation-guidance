@@ -22,8 +22,7 @@ Here is the list of arguments covered by this guidance, grouped by topic:
     * [From Remote Event Receivers to SharePoint Online Webhooks and Microsoft Graph Webhooks](./From-Remote-Event-Receivers-to-Webhooks.md)
     - [From SharePoint-hosted apps to client-side applications](./From-SharePoint-Hosted-to-Client-Side.md)
     - [From provider-hosted apps to AAD applications](./From-Provider-Hosted-to-AAD-applications.md)
-    - [From Workflow Apps with SharePoint-hosted Add-in model to Power Automate](./From-Workflow-Apps-to-Power-Automate.md)
-    - [From SharePoint 2013 Workflows (WFM) to Power Automate](./From-WFM-to-Power-Automate.md)
+    * [From SharePoint Add-in model Workflow Apps to Microsoft Power Automate](./From-Workflow-Apps-to-Power-Automate.md)
     - [Publishing apps in the Microsoft 365 Store](./Publishing-apps-on-the-Microsoft-365-Store.md)
 
 Every single topic is covered from multiple angles with an article, a video, and practical samples that you can use to take inspiration from.
