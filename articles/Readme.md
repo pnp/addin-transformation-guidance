@@ -23,7 +23,7 @@ Here is the list of arguments covered by this guidance, grouped by topic:
     - [From SharePoint-hosted apps to client-side applications](./From-SharePoint-Hosted-to-Client-Side.md)
     - [From provider-hosted apps to AAD applications](./From-Provider-Hosted-to-AAD-applications.md)
     * [From SharePoint Add-in model Workflow Apps to Microsoft Power Automate](./From-Workflow-Apps-to-Power-Automate.md)
-    - [Publishing apps in the Microsoft 365 Store](./Publishing-apps-on-the-Microsoft-365-Store.md)
+    - [Publishing modern SharePoint applications on Microsoft AppSource](./Publishing-modern-SharePoint-apps-on-AppSource.md)
 
 Every single topic is covered from multiple angles with an article, a video, and practical samples that you can use to take inspiration from.
 
