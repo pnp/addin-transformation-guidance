@@ -459,7 +459,9 @@ If you click on the pencil, just beside the web part, you will be able to show t
 
 ## Recommended content 
 You can find additional information about this topic reading the following documents:
+* [Set up your SharePoint Framework development environment](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment)
 * [Build your first SharePoint client-side web part](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part)
-
+* [Microsoft Graph Toolkit overview](https://learn.microsoft.com/en-us/graph/toolkit/overview)
+* [File list component in Microsoft Graph Toolkit](https://learn.microsoft.com/en-us/graph/toolkit/components/file-list)
 
 [Go back to the index](./Readme.md)
