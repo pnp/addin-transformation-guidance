@@ -952,9 +952,184 @@ Whenever you get a webhook notification, in the notification body you also get i
 Your webhook solution is now fully implemented and ready to be tested. However, if you will simply run the Azure Function App project from your local machine it will start listening on *localhost*, which clearly is not publicly avaialble and cannot be reached by SharePoint Online. One option could be to publish the Azure Function on a real Azure Function App instance. However, if that is the case, you will have to rely on remote debugging and generally speaking your development and debugging experience will become slower.
 Another option is to rely on one of the many tools available on the network to create a public proxy with an incoming tunnel that will redirect requests from a public URL to your internal localhost. For example, you could use [ngrok](https://ngrok.com/), which is a quite commonly used tool in this scenario.
 
-No matter what kind of technology and tool you will use to proxy the notifications from SharePoint Online to your localhost, keep into account that the SharePoint Online Webhooks are an asynchronous communication technique and there could be delays in the notification. For example, it is quite common to get an event notification few seconds or even few minutes after it occurred. Don't be worried about this behavior and actually be prepared to process event in a really asynchronos manner.
+No matter what kind of technology and tool you will use to proxy the notifications from SharePoint Online to your localhost, keep into account that the SharePoint Online Webhooks are an asynchronous communication technique and there could be delays in the notification. For example, it is quite common to get an event notification few seconds or even few minutes after it occurred. Don't be worried about this behavior and actually be prepared to process events in a really asynchronos manner.
 
-You are now ready to play with your webhook solution. Have fun!
+## Notifications with Microsoft Graph
+Another option that you have to handle notifications of events happening in SharePoint Online is to rely on Microsoft Graph Notifications (or webhooks). From an architectural point of view, the Microsoft Graph Notifications are really similar to the SharePoint Online webhooks. In fact, you need to register a subscription, you have to implement a validation endpoint for the subscription, you need to renew the subscription before it expires, and when the notification happens you get only a reference to the targe item and not the actual data, that you need to retrieve with an explicit request. Let's dig a little bit more into developing Microsoft Graph Notification endpoints.
+
+### Registering a Microsoft Graph Notification Subscriber
+In order to register a Microsoft Graph Notification subscriber you simply need to make an HTTP POST request to the Microsoft Graph subscriptions endpoint. 
+
+```TXT
+https://graph.microsoft.com/v1.0/subscriptions
+```
+
+In the body of the request you need to specify the information about the resource that you want to be notified about. In the following code excerpt you can see a sample request.
+
+```JSON
+{
+   "changeType": "updated",
+   "notificationUrl": "https://<your-host-url>/<your-notification-endpoint>",
+   "resource": "sites/{site-id}/lists/{list-id}",
+   "expirationDateTime":"2023-03-05T18:23:45.9356913Z",
+   "clientState": "secretClientValue"
+}
+```
+
+> [!NOTE]
+> In order to register a subscription, you will need permissions specific for the target of the subscription. You can find the list of permissions required for every supported target entity by reading the document [Create subscription - Permissions](https://learn.microsoft.com/en-us/graph/api/subscription-post-subscriptions?view=graph-rest-1.0&tabs=http#permissions).
+
+The JSON body of the request specifies the *changeType*, which can be any of the following values:
+* created: when a new item is created
+* updated: when an existing item is updated
+* deleted: when an existing item is deleted
+
+For SharePoint Online lists, the value *updated* is the only supported for the *changeType* property.
+
+Then, it specifies the *notificationUrl* that is the URL of the endpoint that will receive the change notifications. It must be an endpoint published over HTTPS. The *resource* property defines the target resource to monitor for notifications. In the above sample you can see a resource of type SharePoint Online list, where you need to specify the Microsoft Graph *{site-id}* and *{list-id}*. The *expirationDateTime* defines how long the subscription will last, and needs to adhere to the supported expiration limites defined in the table [Maximum length of subscription per resource type](https://learn.microsoft.com/en-us/graph/api/resources/subscription?view=graph-rest-1.0#maximum-length-of-subscription-per-resource-type). For a SharePoint Online list the expiration time can be up to 30 days.
+
+The *clientState* is a required string that allows your notification endpoint to validate the requests coming from Microsoft Graph. It can be a string no longer than 128 characters.
+
+The response that you will get from a successful registration is like the following code excerpt.
+
+```JSON
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#subscriptions/$entity",
+  "id": "185e2379-e250-4a30-9bf4-32209164e3f4",
+  "resource": "sites/{site-id}/lists/{list-id}",
+  "applicationId": "c3ecbfd9-8178-4f59-bd47-e50ea2ebe9b0",
+  "changeType": "created",
+  "clientState": "secretClientValue",
+  "notificationUrl": "https://<your-host-url>/<your-notification-endpoint>",
+  "expirationDateTime": "2023-03-05T18:23:45.9356913Z",
+  "creatorId": "2920e60f-a1d8-4175-ac5e-d83a05cc2a19",
+  "latestSupportedTlsVersion": "v1_2",
+  "notificationContentType": "application/json"
+}
+```
+
+The response provides a recap of the settings for the just registered subscription, including the *id* of the subscription that can be used later on to renew it.
+
+### Registration Validation
+Like it happens with the SharePoint Online Webhooks, a Microsoft Graph Notification endpoint gets validated by Microsoft Graph through an HTTP POST request to the endpoint. The URL of the validation request looks like the following one.
+
+```TXT
+https://<your-host-url>/<your-notification-endpoint>?validationToken={opaqueTokenCreatedByMicrosoftGraph}
+```
+
+Your notification endpoint must reply back to Microsoft Graph, within no more than 10 seconds, providing a 200 OK response status and with the content of the URL decoded value of the *validationToken* in the body of the response as *text/plain*.
+
+### Registration Renewal
+Whenever a Microsoft Graph Notification subscription is going to expire, but it is not yet expired, you can renew it by making an HTTP PATCH request targeting the subscription by *id* using a URL like the following one:
+
+```TXT
+https://graph.microsoft.com/v1.0/subscriptions/{id}
+```
+
+For example, to renew the subscription created in the code excerpts above, the URL should be like the following one. 
+
+```TXT
+https://graph.microsoft.com/v1.0/subscriptions/185e2379-e250-4a30-9bf4-32209164e3f4
+```
+
+The body of the renewal request should specify the new expiration date and time, like in the following code excerpt.
+
+```JSON
+{
+  "expirationDateTime": "2023-03-15T18:23:45.9356913Z",
+}
+```
+
+If you will not renew a subscription, it will be automatically deleted by Microsoft Graph. You can also explicitly delete a subscription, before it expires, by making an HTTP DELETE request to the subscription endpoint.
+
+### Handling a Notification
+Whenever your endpoint will get a notification, Microsoft Graph will send a JSON message with a structure like the following one.
+
+```JSON
+{
+  "value": [
+    {
+      "id": "lsgTZMr9KwAAA",
+      "subscriptionId":"{id}",
+      "subscriptionExpirationDateTime":"2023-03-15T18:23:45.9356913Z",
+      "clientState":"secretClientValue",
+      "changeType":"updated",
+      "resource":"sites/{site-id}/lists/{list-id}",
+      "tenantId": "ff983742-8176-4a22-8141-5acde86f0902",
+      "resourceData":
+      {
+      }
+    }
+  ]
+}
+```
+
+As you can see, in the body of the notification you get information about the subscription itself, as well as the source *tenantId*, in case you have created a multi-tenant subscription. Moreover, in the *resourceData* complex property you find information about the target item that you've got the notification for. However, in case of SharePoint Online list notification, you will not get any actual *resourceData* about the target item and, as like as it was with the SharePoint Online Webhooks, it is up to you to use the *GetChanges* method to retrieve the actual changes.
+
+Just for the sake of completeness, in the following code excerpt you can see a sample implementation of a Microsoft Graph Notification endpoint.
+
+```CSharp
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.Extensions.Logging;
+using Microsoft.Graph;
+
+namespace MSGraphSDKNotifications
+{
+    public static class NotifyFunction
+    {
+        [Function("Notify")]
+        public static async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req,
+            FunctionContext executionContext)
+        {
+            // Prepare the response object
+            HttpResponseData response = null;
+
+            // Get the logger
+            var log = executionContext.GetLogger("NotifyFunction");
+
+            log.LogInformation("Notify function triggered!");
+
+            // Graph Subscription validation logic, if needed
+            var querystring = QueryHelpers.ParseQuery(req.Url.Query);
+            string validationToken = null;
+            if (querystring.ContainsKey("validationToken"))
+            {
+                validationToken = querystring["validationToken"];
+            }
+            if (!string.IsNullOrEmpty(validationToken))
+            {
+                response = req.CreateResponse(HttpStatusCode.OK);
+                response.WriteString(validationToken);
+
+                return response;
+            }
+            else
+            {
+                // Just output the body of the notification,
+                // for the sake of understanding how Microsoft Graph notifications work
+                using (var sr = new StreamReader(req.Body))
+                {
+                    log.LogInformation(sr.ReadToEnd());
+                }
+            }
+
+            response = req.CreateResponse(HttpStatusCode.OK);
+
+            return response;
+        }
+    }
+}
+```
+
+A Microsoft Graph Notifications endpoint must reply back to Microsoft Graph in no more than 3 seconds. As such, you should think about implementing an asynchronous model with a queue like the one you've seen in the previous section about SharePoint Online Webhooks. 
 
 ## Recommended content 
 You can find additional information about this topic reading the following documents:
@@ -962,6 +1137,6 @@ You can find additional information about this topic reading the following docum
 * [Get started with SharePoint webhooks](https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/get-started-webhooks)
 * [SharePoint webhooks sample reference implementation](https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/webhooks-reference-implementation)
 * [SharePoint list webhooks](https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/lists/overview-sharepoint-list-webhooks)
-
+* [Use the Microsoft Graph API to get change notifications](https://learn.microsoft.com/en-us/graph/api/resources/webhooks)
 
 [Go back to the index](./Readme.md)
