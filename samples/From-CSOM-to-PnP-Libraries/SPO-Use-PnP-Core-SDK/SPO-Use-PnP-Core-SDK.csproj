@@ -13,4 +13,10 @@
     <PackageReference Include="PnP.Core.Auth" Version="1.8.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
