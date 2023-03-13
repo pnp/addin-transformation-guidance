@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://piasysdev.sharepoint.com/sites/AddInTransformationGuidanceSamples/Shared%20Documents/Forms/AllItems.aspx",
+      "pageUrl": "https://enter-your-SharePoint-site/Shared%20Documents/Forms/AllItems.aspx",
       "customActions": {
         "a782a9b0-dffe-480d-918a-9c645c64583e": {
           "location": "ClientSideExtension.ApplicationCustomizer",
@@ -15,7 +15,7 @@
       }
     },
     "notificationHeader": {
-      "pageUrl": "https://piasysdev.sharepoint.com/sites/AddInTransformationGuidanceSamples/Shared%20Documents/Forms/AllItems.aspx",
+      "pageUrl": "https://enter-your-SharePoint-site/Shared%20Documents/Forms/AllItems.aspx",
       "customActions": {
         "a782a9b0-dffe-480d-918a-9c645c64583e": {
           "location": "ClientSideExtension.ApplicationCustomizer",
