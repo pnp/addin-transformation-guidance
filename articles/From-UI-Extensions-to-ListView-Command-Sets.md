@@ -20,7 +20,7 @@ In the next screeshot you can see the UI of the UI Extension built with the Shar
 
 Lastly, in the following screeshot you can see the actual UI of the UI Extension in action, when showing the details of the selected document.
 
-![The UI of the UI Extension when rendering the details of a document.](./assets/From-UI-Extensions-to-ListView-Command-Sets/From-UI-Extension-to-ListView-Command-Set-legacy-output.png)
+![The UI of the UI Extension when rendering the details of a document.](./assets/From-UI-Extensions-to-ListView-Command-Sets/From-UI-Extension-to-ListView-Command-Set-old-output.png)
 
 Now you want to transform the customization into a modern ListView Command Set built with SharePoint Framework.
 

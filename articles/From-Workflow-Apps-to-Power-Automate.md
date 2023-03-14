@@ -35,7 +35,7 @@ Moreover, every worfklow definition also provides a Workflow Status Page to see 
 It is a very basic but really common scenario, which relies on the out of the box capabilities of the SharePoint Add-in model.
 
 ## Converting the workflow into a Power Automate flow
-Let's imagine that you want to replace the old and legacy SharePoint Add-in model workflow depicted in the previous section with a new Power Automate flow.
+Let's imagine that you want to replace the old SharePoint Add-in model workflow depicted in the previous section with a new Power Automate flow.
 
 First of all, let's create a custom list of Orders with the same data structure described in the previous section. You can create it manually using the web browser, or you can rely on a PnP Provisioning template, like the one available in the samples related to this article ([orders.xml](../samples/From-Workflow-Apps-to-Power-Automate/orders.xml)).
 
