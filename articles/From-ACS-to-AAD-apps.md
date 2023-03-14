@@ -128,10 +128,7 @@ You need to provide a name for your new application. Then you need to choose the
 - Accounts in any organizational directory and personal Microsoft accounts: the application will be multi-tenant and will support any personal Microsoft account (like Skype, Xbox, etc.). 
 - Personal Microsoft accounts only: the application will support any personal Microsoft account (like Skype, Xbox, etc.).
 
-For the current scenario, you can choose either the single-tenant or multi-tenant option. Let's go for single-tenant to make the scenario closer to the ACS one.
-
->[!IMPORTANT]
->With ACS there was only the single-tenant model, and you had to manually register your application in any tenant where you wanted to use it. With Azure AD you can register an application that you can offer to multiple tenants/customers. If you are an ISV or if you are working on a solution that you want to sell with a Software as a Service (SaaS) model, this is a game changer capability.
+For the current scenario, you can choose either the single-tenant or multi-tenant option. Let's go for single-tenant one.
 
 Click the *Register* button and register the actual application. You will now be prompted with a page with a set of useful information about the registered application. You can see the page in the following screenshot.
 

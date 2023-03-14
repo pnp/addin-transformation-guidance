@@ -4,6 +4,10 @@ In the SharePoint Add-in model you are used to creating custom web parts for Sha
 
 In this article you can find detailed information about how to transform an already existing App Part into a modern client-side web part.
 
+If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
+
+[![IMAGE_ALT](https://img.youtube.com/vi/???/0.jpg)](https://youtu.be/???)
+
 > [!NOTE]
 > You can find further details about creating SharePoint Framework web parts by reading the document [Build your first SharePoint client-side web part](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part).
 
