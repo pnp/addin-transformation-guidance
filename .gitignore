@@ -353,3 +353,4 @@ MigrationBackup/
 [Aa]pp.[Cc]onfig
 
 samples/From-Remote-Event-Receivers-to-Webhooks/SPO-Webhooks/ngrok-tunnel.txt
+samples/From-Remote-Event-Receivers-to-Webhooks/SPO-Webhooks/GetAccessToken.txt
