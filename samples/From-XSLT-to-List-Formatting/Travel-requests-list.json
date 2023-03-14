@@ -1,0 +1,42 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+    "additionalRowClass": {
+      "operator": ":",
+      "operands": [
+        {
+          "operator": "==",
+          "operands": [
+            {
+              "operator": "%",
+              "operands": [
+                "@rowIndex",
+                2
+              ]
+            },
+            0
+          ]
+        },
+        "sp-css-backgroundColor-BgLightGray30",
+        {
+          "operator": ":",
+          "operands": [
+            {
+              "operator": "==",
+              "operands": [
+                {
+                  "operator": "%",
+                  "operands": [
+                    "@rowIndex",
+                    2
+                  ]
+                },
+                1
+              ]
+            },
+            "sp-css-backgroundColor-noFill",
+            ""
+          ]
+        }
+      ]
+    }
+  }
