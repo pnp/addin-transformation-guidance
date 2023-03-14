@@ -43,7 +43,7 @@ The next step is the *"Availability"* one, where you can configure the target ma
 
 ![The product configuration step about *"Availability"*, where you can define the target markets and the release date.](./assets/Publishing-modern-SharePoint-apps-on-AppSource/Publishing-modern-SharePoint-apps-on-AppSource-Partner-Center-10.png)
 
-In case your solution relies on Azure AD applications, you can configure the Client IDs of those applications, including a *"Friendly name"*, an *"App domain"*, an *"App redirect URL"*, and you can eventually generate a *"Client Secret"* through the *"Client IDs"* section.
+In case your solution relies on Azure Access Control Service (ACS), you can configure the Client IDs of those applications, including a *"Friendly name"*, an *"App domain"*, an *"App redirect URL"*, and you can eventually generate a *"Client Secret"* through the *"Client IDs"* section. Clearly, for a modern SharePoint Online solutions, you shouldn't rely on Azure ACS but on Azure Active Directory registered applications.
 
 ![The product configuration step about *"Client IDs"*, where you can configure Azure AD applications required by the solution.](./assets/Publishing-modern-SharePoint-apps-on-AppSource/Publishing-modern-SharePoint-apps-on-AppSource-Partner-Center-11.png)
 
