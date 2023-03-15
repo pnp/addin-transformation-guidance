@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spo-sp-fx-client-client-side-solution",
+    "id": "ace22902-c00e-4eef-b431-8b700158b538",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "spo-sp-fx-client description"
+      },
+      "longDescription": {
+        "default": "spo-sp-fx-client description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spo-sp-fx-client Feature",
+        "description": "The feature that activates elements of the spo-sp-fx-client solution.",
+        "id": "8090d5a0-21db-41f0-9c27-68f6b11e2fb0",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spo-sp-fx-client.sppkg"
+  }
+}

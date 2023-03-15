@@ -1,15 +1,3 @@
-# Upgrading SharePoint-hosted applications to client-side applications
-
-
-See https://aka.ms/spfx-yeoman-info for more information on how to use this generator.
-Let's create a new SharePoint solution.
-? What is your solution name? spo-sp-fx-client
-? Which type of client-side component to create? WebPart
-Add new Web part to solution spo-sp-fx-client.
-? What is your Web part name? ConsumeSPOClientSide
-? Which template would you like to use? React
-
-```TypeScript
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
@@ -24,6 +12,8 @@ import * as strings from 'ConsumeSpoClientSideWebPartStrings';
 import ConsumeSpoClientSide from './components/ConsumeSpoClientSide';
 import { IConsumeSpoClientSideProps } from './components/IConsumeSpoClientSideProps';
 
+import { SPHttpClient } from '@microsoft/sp-http';
+
 export interface IConsumeSpoClientSideWebPartProps {
   description: string;
 }
@@ -32,6 +22,7 @@ export default class ConsumeSpoClientSideWebPart extends BaseClientSideWebPart<I
 
   private _isDarkTheme: boolean = false;
   private _environmentMessage: string = '';
+  private _spHttpClient: SPHttpClient;
 
   public render(): void {
     const element: React.ReactElement<IConsumeSpoClientSideProps> = React.createElement(
@@ -41,7 +32,9 @@ export default class ConsumeSpoClientSideWebPart extends BaseClientSideWebPart<I
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
-        userDisplayName: this.context.pageContext.user.displayName
+        userDisplayName: this.context.pageContext.user.displayName,
+        spHttpClient: this._spHttpClient,
+        webUrl: this.context.pageContext.web.absoluteUrl
       }
     );
 
@@ -49,6 +42,9 @@ export default class ConsumeSpoClientSideWebPart extends BaseClientSideWebPart<I
   }
 
   protected onInit(): Promise<void> {
+
+    this._spHttpClient = this.context.spHttpClient;
+
     return this._getEnvironmentMessage().then(message => {
       this._environmentMessage = message;
     });
@@ -130,72 +126,3 @@ export default class ConsumeSpoClientSideWebPart extends BaseClientSideWebPart<I
     };
   }
 }
-```
-
-
-```TypeScript
-export interface IConsumeSpoClientSideProps {
-  description: string;
-  isDarkTheme: boolean;
-  environmentMessage: string;
-  hasTeamsContext: boolean;
-  userDisplayName: string;
-}
-```
-
-```TypeScript
-import * as React from 'react';
-import styles from './ConsumeSpoClientSide.module.scss';
-import { IConsumeSpoClientSideProps } from './IConsumeSpoClientSideProps';
-import { escape } from '@microsoft/sp-lodash-subset';
-
-export default class ConsumeSpoClientSide extends React.Component<IConsumeSpoClientSideProps, {}> {
-  public render(): React.ReactElement<IConsumeSpoClientSideProps> {
-    const {
-      description,
-      isDarkTheme,
-      environmentMessage,
-      hasTeamsContext,
-      userDisplayName
-    } = this.props;
-
-    return (
-      <section className={`${styles.consumeSpoClientSide} ${hasTeamsContext ? styles.teams : ''}`}>
-        <div className={styles.welcome}>
-          <img alt="" src={isDarkTheme ? require('../assets/welcome-dark.png') : require('../assets/welcome-light.png')} className={styles.welcomeImage} />
-          <h2>Well done, {escape(userDisplayName)}!</h2>
-          <div>{environmentMessage}</div>
-          <div>Web part property value: <strong>{escape(description)}</strong></div>
-        </div>
-        <div>
-          <h3>Welcome to SharePoint Framework!</h3>
-          <p>
-            The SharePoint Framework (SPFx) is a extensibility model for Microsoft Viva, Microsoft Teams and SharePoint. It&#39;s the easiest way to extend Microsoft 365 with automatic Single Sign On, automatic hosting and industry standard tooling.
-          </p>
-          <h4>Learn more about SPFx development:</h4>
-          <ul className={styles.links}>
-            <li><a href="https://aka.ms/spfx" target="_blank" rel="noreferrer">SharePoint Framework Overview</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-graph" target="_blank" rel="noreferrer">Use Microsoft Graph in your solution</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-teams" target="_blank" rel="noreferrer">Build for Microsoft Teams using SharePoint Framework</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-viva" target="_blank" rel="noreferrer">Build for Microsoft Viva Connections using SharePoint Framework</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-store" target="_blank" rel="noreferrer">Publish SharePoint Framework applications to the marketplace</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-api" target="_blank" rel="noreferrer">SharePoint Framework API reference</a></li>
-            <li><a href="https://aka.ms/m365pnp" target="_blank" rel="noreferrer">Microsoft 365 Developer Community</a></li>
-          </ul>
-        </div>
-      </section>
-    );
-  }
-}
-```
-
-
-
-
-
-## Recommended content 
-You can find additional information about this topic reading the following documents:
-* []()
-
-
-[Go back to the index](./Readme.md)

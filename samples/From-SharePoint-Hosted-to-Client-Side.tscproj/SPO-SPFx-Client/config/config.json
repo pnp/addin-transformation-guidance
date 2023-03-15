@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "consume-spo-client-side-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/consumeSpoClientSide/ConsumeSpoClientSideWebPart.js",
+          "manifest": "./src/webparts/consumeSpoClientSide/ConsumeSpoClientSideWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ConsumeSpoClientSideWebPartStrings": "lib/webparts/consumeSpoClientSide/loc/{locale}.js"
+  }
+}
