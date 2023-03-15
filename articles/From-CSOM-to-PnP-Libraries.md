@@ -2,6 +2,10 @@
 
 In SharePoint classic solution, most likely you have been using the Client Side Object Model (CSOM) for .NET Framework as the primary client library for consuming SharePoint data. CSOM has been available for many years with different flavors targeting different versions of SharePoint on-premises and SharePoint Online. Since 2021, Microsoft released a new version of CSOM for SharePoint Online that targets .NET Standard 2.0 and as such can be referenced in .NET Framework 4.5+, .NET Core 2.0+, and .NET 5.0/6.0/7.0/8.0.
 
+If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
+
+[![IMAGE_ALT](https://img.youtube.com/vi/MLHMjJNHehE/0.jpg)](https://youtu.be/MLHMjJNHehE)
+
 In order to use CSOM, you simply need to reference the *Microsoft.SharePointOnline.CSOM* NuGet package, create a *ClientContext* object, configure authentication, and start consuming the SharePoint Online data. For authentication, in CSOM there used to be support for *SharePointOnlineCredentials* type in order to leverage username and password authentication with SharePoint Online. However, since when Microsoft switched to modern authentication the username and password authentication is not anymore supported, and you should rely on OAuth and modern authentication. In the following code excerpt you can see an example of using plain CSOM with modern authentication via Microsoft Authentication Library (MSAL).
 
 ```CSharp

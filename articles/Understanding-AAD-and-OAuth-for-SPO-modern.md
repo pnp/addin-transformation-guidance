@@ -4,6 +4,10 @@ Authentication and Authorization play a key role in any development platform. In
 
 In fact, Azure Active Directory sits under the cover of every Microsoft 365 tenant and handles authentication and authorization requirements when accessing native services, as well as custom developed applications. OAuth 2.0 is the industry protocol used to authorize access to native workloads and custom developed applications.
 
+If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
+
+[![IMAGE_ALT](https://img.youtube.com/vi/3u1ei8hcGG8/0.jpg)](https://youtu.be/3u1ei8hcGG8)
+
 ## Understanding the role of AzureAD and OAuth 2.0 in SharePoint Framework
 In Microsoft SharePoint Online, when developing SharePoint Framework (SPFx) solutions, you can consume Microsoft Graph, as well as any other third-party APIs relying on OAuth 2.0 and Azure Active Directory. Specifically, and by default, in SharePoint Framework any external API can be consumed either via _MSGraphClient_ or _AadHttpClient_ and leveraging a pre-defined Azure Active Directory application with name "SharePoint Online Client Extensibility Web Application Principal". 
 

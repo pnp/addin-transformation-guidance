@@ -4,6 +4,10 @@ A really common use-case when developing applications for SharePoint Online is t
 
 In the SharePoint Add-in model there wasn't a real concept of multi-tenant solution, but you could create a provider-hosted application and in the provider-hosted code you could handle different target tenants and application identities when talking with Azure Access Control Service (ACS) to retrieve a token to consume SharePoint Online.
 
+If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
+
+[![IMAGE_ALT](https://img.youtube.com/vi/iq8iMXaTpBQ/0.jpg)](https://youtu.be/iq8iMXaTpBQ)
+
 ## Registering Multi-tenant applications in Azure Active Directory
 Nowadays, with SharePoint Framework you can easily build the UI/UX of your solutions regardless if the solutions are single-tenant or multi-tenant and you should have a back-end infrastructure, for example hosted on Microsoft Azure, to provide the actual business logic for your solution. The back-end infrastructure should be implemented using SharePoint REST APIs and/or Microsoft Graph and should rely on an Azure Active Directory registered application.
 

@@ -43,6 +43,10 @@ clientContext.executeQueryAsync(
 
 The above syntax is based on JSOM (sp.js) and is really tight to the SharePoint Add-in model architecture, because for example it relies on having the SharePoint tokens in the URL of a SharePoint-hosted site.
 
+If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
+
+[![IMAGE_ALT](https://img.youtube.com/vi/ipqQiJ_MbNM/0.jpg)](https://youtu.be/ipqQiJ_MbNM)
+
 ## Consuming SharePoint Online Data in SharePoint Framework
 In the modern development model for SharePoint Online, the JSOM library is not anymore a suitable option and you should rely on SharePoint Online REST APIs or on Microsoft Graph APIs. For example, if you are developing a SharePoint Framework solution, you can rely on the *SPHttpClient* and on the *MSGraphClientV3* objects of the SPFx context to consume the SharePoint REST APIs or the Microsoft Graph APIs, respectively.
 

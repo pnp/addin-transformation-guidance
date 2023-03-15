@@ -15,6 +15,10 @@ SP.UI.Status.removeStatus(statusId);
 
 Nowadays, with SharePoint Framework, you can rely on the Application Customizer extensions to achieve the same result and even more. In this article you can find detailed information about how to transform notifications and status bars of the SharePoint Add-in model into SharePoint Framework modern solutions.
 
+If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
+
+[![IMAGE_ALT](https://img.youtube.com/vi/-pivUEMMZVg/0.jpg)](https://youtu.be/-pivUEMMZVg)
+
 > [!NOTE]
 > You can find further details about creating a SharePoint Framework Application Customizer by reading the documents [Build your first SharePoint Framework Extension (Hello World part 1)](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/build-a-hello-world-extension) and [Use page placeholders from Application Customizer (Hello World part 2)](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions).
 

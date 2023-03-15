@@ -4,6 +4,10 @@ In classic SharePoint and with the SharePoint Add-in model you were used to prov
 
 In this article you can find detailed information about how to transform the provisioning of an already existing SharePoint Add-in Model based solution into a SharePoint Framework solution as well as how you can replace the SharePoint Feature Framework provisioning with the new and more powerfull PnP Provisioning Engine.
 
+If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
+
+[![IMAGE_ALT](https://img.youtube.com/vi/Y8-YSuSKjZA/0.jpg)](https://youtu.be/Y8-YSuSKjZA)
+
 > [!NOTE]
 > You can find further details about the SharePoint Feature Framework by reading the document [SharePoint Features schemas](https://learn.microsoft.com/en-us/sharepoint/dev/schema/sharepoint-features-schemas).
 

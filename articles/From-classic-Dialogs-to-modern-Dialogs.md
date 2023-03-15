@@ -26,6 +26,10 @@ Just to make an example, the above code could be used in the action of a UI cust
 
 Nowadays, with SharePoint Framework, you can rely on the SharePoint Framework Dialog Framework to achieve the same result and even more. In this article you can find detailed information about how to transform classic modali dialogs of the SharePoint Add-in model into SharePoint Framework modern dialogs.
 
+If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
+
+[![IMAGE_ALT](https://img.youtube.com/vi/HuQemEUWydM/0.jpg)](https://youtu.be/HuQemEUWydM)
+
 > [!NOTE]
 > You can find further details about leveraging the SharePoint Framework Dialog Framework by reading the document [Use custom dialog boxes with SharePoint Framework Extensions](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/guidance/using-custom-dialogs-with-spfx).
 

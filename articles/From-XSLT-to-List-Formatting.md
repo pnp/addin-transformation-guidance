@@ -2,6 +2,10 @@
 
 In the SharePoint classic world, you were used to customize the rendering of lists and libraries using XSLT (eXtensible Stylesheet Language for Transformation) and the *XsltListViewWebPart* control. Nowadays, in the modern world, you can achive better results relying on List Formatting.
 
+If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
+
+[![IMAGE_ALT](https://img.youtube.com/vi/q-FolBYQDMM/0.jpg)](https://youtu.be/q-FolBYQDMM)
+
 In fact, through List Formatting you can customize the rendering of a single field, via column formatting, or the rendering of a whole list view, via list view formatting. You can easily do that either using the web-based UI of SharePoint and a user-friendly designer, or writing your own custom JSON templates. Under the cover, the List Formatting will process client-side the rendering of your data, without impacting or changing the actual data, but simply applying a custom rendering template on top of it. 
 
 Furthermore, the List Formatting can be applied to SharePoint lists and libraries, as well as to lists of Microsoft Lists, which under the cover relies on SharePoint Online. In this article you can learn how to leverage List Formatting in your solutions.

@@ -1,5 +1,0 @@
-- https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/register-sharepoint-add-ins
-    - ACS note, should it be removed?
-- https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly-azureacs
-    - Fix title of https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly-azureacs#using-this-principal-in-your-application-using-the-sharepoint-pnp-sites-core-library
-    - Fix title of https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly-azureacs#using-this-principal-in-your-application-without-using-the-pnp-sites-core-library

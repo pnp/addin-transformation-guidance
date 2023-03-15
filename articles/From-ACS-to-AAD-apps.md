@@ -13,7 +13,7 @@ In this article you can find detailed information about how the Azure AD applica
 
 If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
 
-[![IMAGE_ALT](https://img.youtube.com/vi/QG96saT5JPs/0.jpg)](https://youtu.be/QG96saT5JPs)
+[![IMAGE_ALT](https://img.youtube.com/vi/jNKX6qos8ZI/0.jpg)](https://youtu.be/jNKX6qos8ZI)
 
 ## Upgrading from ACS to Azure AD
 In this section we make the assumption that you already have an app-only application registered in SharePoint Online, using the SharePoint Add-in model and ACS. 

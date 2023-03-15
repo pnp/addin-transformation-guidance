@@ -4,6 +4,10 @@ In the SharePoint Add-in model you are used to extending the ribbon bar and the 
 
 In this article you can find detailed information about how to transform an already existing UI Extensions into a ListView Command Set.
 
+If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
+
+[![IMAGE_ALT](https://img.youtube.com/vi/qbQ5QkzQOgQ/0.jpg)](https://youtu.be/qbQ5QkzQOgQ)
+
 > [!NOTE]
 > You can find further details about creating a SharePoint Framework ListView Command Set by reading the document [Build your first ListView Command Set extension](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api).
 

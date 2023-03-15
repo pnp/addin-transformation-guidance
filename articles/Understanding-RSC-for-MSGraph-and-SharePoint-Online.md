@@ -6,6 +6,10 @@ However, ACS is not anymore the best option to manage applications registration 
 
 The *All* target is not always welcomed by customers, in particular by enterprise customers with thousands of site collections, willing to have more granular permissions, being able to select the target site collections where the application should have read, write, manager, or full control permissions.
 
+If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
+
+[![IMAGE_ALT](https://img.youtube.com/vi/94eJAsAm1Kg/0.jpg)](https://youtu.be/94eJAsAm1Kg)
+
 > [!NOTE]
 > You can learn more about registering applications in Azure Active Directory instead of relying on Azure ACS by reading the article [Upgrading SharePoint applications from Azure Access Control Service to Azure Active Directory](./From-ACS-to-AAD-apps.md). 
 

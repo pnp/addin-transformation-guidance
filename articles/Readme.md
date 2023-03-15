@@ -7,6 +7,7 @@ Here is the list of arguments covered by this guidance, grouped by topic:
 - Modern Provisioning
     * [Modern provisioning of artifacts and Information Architecture](./Modern-Provisioning.md)
 - Modern Authentication and Authorization
+    * [Understanding Azure Active Directory and OAuth 2.0 in the context of SharePoint Online modern development](./Understanding-AAD-and-OAuth-for-SPO-modern.md)
     * [From Access Control Service applications to Azure Active Directory applications](./From-ACS-to-AAD-apps.md)
     * [Building Multi-tenant applications for SharePoint Online](./Multi-tenant-applications.md)
     * [Understanding Resource Specific Consent (RSC)](./Understanding-RSC-for-MSGraph-and-SharePoint-Online.md)

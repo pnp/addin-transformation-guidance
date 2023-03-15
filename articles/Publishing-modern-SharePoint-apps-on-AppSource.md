@@ -2,6 +2,10 @@
 
 In this article you will learn how to publish on the Microsoft 365 Store (via [Microsoft AppSource](https://appsource.microsoft.com/)) a modern solution built with SharePoint Framework. Your SharePoint Framework solution can target SharePoint Online only, or also Microsoft Teams. In the latter case, the application will show up in Microsoft Teams gallery through the SharePoint Online tenant App Catalog.
 
+If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
+
+[![IMAGE_ALT](https://img.youtube.com/vi/_z-q787tGrQ/0.jpg)](https://youtu.be/_z-q787tGrQ)
+
 ## How to publish an application on the marketplace
 First of all, you need to make sure that you are a member of the Microsoft Partner Network (MPN). If you are not a registerd member, you can enroll through the following link: [https://aka.ms/joinmarketplace](https://aka.ms/joinmarketplace). In order to being able to sell your products on the marketplace, you will also need to provide a payout profile, a tax profile, and to compile the billing profile. The process will require a review and approval phase on the Microsoft side.
 

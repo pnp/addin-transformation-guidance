@@ -2,6 +2,10 @@
 
 With the SharePoint Add-in model you can create workflow apps running in a SharePoint-hosted add-in. You simply need to create a SharePoint Add-in model solution, choose to create a SharePoint-hosted app, and add an item of type Workflow to the project. By default, the created workflow will run in the SharePoint-hosted app site, and will target lists or libraries in that site. If you configure the workflow properties to be an *"Integrated App"* you can also run the workflow in the host site, instead of the app site.
 
+If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
+
+[![IMAGE_ALT](https://img.youtube.com/vi/NOy2O1VCs9M/0.jpg)](https://youtu.be/NOy2O1VCs9M)
+
 > [!IMPORTANT]
 > Starting with Visual Studio 2022, Workflow templates have been removed from SharePoint Add-in Projects.
 

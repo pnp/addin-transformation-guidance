@@ -2,6 +2,10 @@
 
 In the SharePoint Add-in model you can create Remote Event Receivers, which can be used to handle events related to a list item, a list, a website, an app, a BCS entity, or a security configuration. The Remote Event Receivers rely on a SOAP communication channel that allows an external SOAP service to get notifications of events. The events can be synchronous or asynchronous. The synchronous events allow a developer to intercept an event while it is happening and with custom logic the Remote Event Receiver can even cancel the currently running operation. The asynchronous events allow a developer to be notified of an event after it already occured, as such you can only keep track of the event or react to the event, but you cannot cancel the already occurred event, unless you implement your own compensation logic. Due to their nature and logic, the synchronous events are often called *-ing* events (ItemAdding, ItemUpdating, ItemDeleting, etc.), while the asynchronous events are often called *-ed* events (ItemAdded, ItemUpdated, ItemDeleted, etc.).
 
+If you prefer, you can watch the following video, instead of reading the whole article, which you can still consider as a much more detailed reference.
+
+[![IMAGE_ALT](https://img.youtube.com/vi/3-fUEd6lGvI/0.jpg)](https://youtu.be/3-fUEd6lGvI)
+
 From a technological point of view, a Remote Event Receiver is implemented as a Windows Communication Framework (WCF) service. In fact, when using Visual Studio, if you create a Remote Event Receiver you will get a WCF service that implements the following interface (Service Contract).
 
 ```CSharp
