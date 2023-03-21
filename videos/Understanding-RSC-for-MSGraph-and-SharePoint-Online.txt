@@ -1,0 +1,39 @@
+This module introduces you to the Resource Specific Consent authorization model of Azure Active Directory and SharePoint Online. You will learn how to rely on the Sites.Selected application permissions in order to consume SharePoint Online with an application only Access Token with permissions limited to selected list of Site Collections.
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=YFUt3pp6C1I&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=6
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=iq8iMXaTpBQ&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=4
+
+#Microsoft365 #AzureAD #MicrosoftGraph #SharePointREST #ResourceSpecificConsent #RSC #SitesSelected #SharePointOnline 
+
+In this video, you will learn about
+
+- Permissions for SharePoint Online in Azure Active Directory
+- Resource Specific Consent for SharePoint Online
+- Sites.Selected application permission scope
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+1:52 Granting selected permissions
+2:34 Demo
+3:36 Certificate authentication for application only Access Tokens
+4:48 Granting selected permissions
+7:18 Consuming SharePoint Online with Sites.Selected permissions
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• Permission resource type - https://learn.microsoft.com/en-us/graph/api/resources/permission?view=graph-rest-1.0
+• Controlling app access on a specific SharePoint site collections is now available in Microsoft Graph - https://devblogs.microsoft.com/microsoft365dev/controlling-app-access-on-specific-sharepoint-site-collections/ 
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

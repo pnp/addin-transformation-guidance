@@ -1,0 +1,42 @@
+This module introduces you to List Formatting to format columns, views, and forms in the modern UI of SharePoint Online and Microsoft Lists.
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=3-fUEd6lGvI&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=13
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=MLHMjJNHehE&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=11
+
+#Microsoft365 #UI #UX #ListFormatting #SharePointOnline 
+
+In this video, you will learn about
+
+- Customizing rendering of list columns
+- Customizing rendering of list views
+- Customizing rendering of list forms
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+1:42 Demo
+1:58 Column Formatting
+5:00 Column Formatting with custom JSON
+5:20 List View Formatting
+6:32 List Form Formatting
+9:45 Formatting with PnP Provisioning
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• Use column formatting to customize SharePoint - https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/column-formatting
+• Use view formatting to customize SharePoint - https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/view-formatting
+• Configure the list form - https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/list-form-configuration
+• List Formatting Samples - https://pnp.github.io/List-Formatting/ 
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

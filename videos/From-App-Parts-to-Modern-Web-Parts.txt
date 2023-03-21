@@ -1,0 +1,40 @@
+This module introduces you to the development of modern SharePoint Online Web Parts and how to transform your already existing SharePoint Add-in model classic App Parts into modern client-side Web Parts built with SharePoint Framework.
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=qbQ5QkzQOgQ&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=7
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=94eJAsAm1Kg&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=5
+
+#Microsoft365 #AppParts #WebParts #SharePointOnline 
+
+In this video, you will learn about
+
+- How to build a modern client-side Web Part with SharePoint framework
+- How to upgrade a classic App Part to a modern Web Part
+- How to leverage React and Microsoft Graph Toolkit to build modern client-side Web Parts
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+1:16 Transformation process
+2:22 Demo
+5:57 Creating SharePoint Framework solutions
+11:22 The transformed modern Web Part in action
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• Set up your SharePoint Framework development environment - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment 
+• Build your first SharePoint client-side web part (Hello World part 1) - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part
+• Microsoft Graph Toolkit overview - https://learn.microsoft.com/en-us/graph/toolkit/overview 
+• File list component in Microsoft Graph Toolkit - https://learn.microsoft.com/en-us/graph/toolkit/components/file-list
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

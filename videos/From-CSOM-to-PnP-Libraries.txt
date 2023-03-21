@@ -1,0 +1,42 @@
+This module introduces you to the development of SharePoint Online modern solutions using the Microsoft 365 & Power Platform Community (aka PnP) libraries. In particular, you can learn how to use PnP Framework and PnP Core SDK on top of or instead of the Client Side Object Model (CSOM) for SharePoint Online.
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=q-FolBYQDMM&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=12
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=ipqQiJ_MbNM&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=10
+
+#Microsoft365 #AzureAD #MicrosoftGraph #PnP #SharePointOnline #CSOM
+
+In this video, you will learn about
+
+- Transforming your code from CSOM to PnP libraries
+- Understanding how to use PnP Framework
+- Understanding how to use PnP Core SDK
+- Using PnP Framework and PnP Core SDK together
+
+📖 All guidance content including code samples can be found here: https://aka.ms/[short-link-to-guidance-repo]
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+1:36 Understanding the PnP Libraries
+4:10 Demo
+6:14 Using PnP Framework
+8:10 Using PnP Core SDK
+13:13 Using PnP Framework and PnP Core SDK together
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• PnP PowerShell - https://pnp.github.io/powershell/
+• PnP Framework - https://github.com/pnp/pnpframework 
+• PnP Core SDK - https://pnp.github.io/pnpcore/
+• Introducing the PnP provisioning engine - https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/introducing-the-pnp-provisioning-engine 
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

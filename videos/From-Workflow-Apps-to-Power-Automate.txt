@@ -1,0 +1,39 @@
+This module introduces you to the design of workflows for SharePoint Online with Microsoft Power Automate as a replacement to the SharePoint Add-in model workflow solutions.
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=_z-q787tGrQ&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=17
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=a1snL_hc94k&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=15
+
+#Microsoft365 #PowerAutomate #Flow #Workflow #SharePointOnline 
+
+In this video, you will learn about
+
+- Upgrading SharePoint Add-in model workflow apps to Power Automate
+- Understanding how Power Automate workflows for SharePoint work
+- Creating an approval workflow in SharePoint with Power Automate
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+2:30 Demo
+6:00 Updating SharePoint Online data from Power Automate flows
+8:29 The task approval UI in Microsoft Teams
+9:38 The flow history of Power Automate
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• Guidance: Migrate from classic workflows to Power Automate flows in SharePoint - https://learn.microsoft.com/en-us/sharepoint/dev/business-apps/power-automate/guidance/migrate-from-classic-workflows-to-power-automate-flows
+• How to: State machines in Microsoft Flow - https://powerautomate.microsoft.com/en-us/blog/state-machines/
+• Design flows with Microsoft Visio - https://learn.microsoft.com/en-us/power-automate/visio-flows 
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

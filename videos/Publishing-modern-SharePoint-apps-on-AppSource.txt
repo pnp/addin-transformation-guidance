@@ -1,0 +1,39 @@
+This module introduces you to the process of publishing an application on the Microsoft AppSource marketplace, so that you can see how to provide for free or how to sell a custom application via the Office Store.
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=NOy2O1VCs9M&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=16
+
+#Microsoft365 #AzureAD #AppSource #OfficeStore #SellApplications #SharePointOnline 
+
+In this video, you will learn about
+
+- Enrolling to the Microsoft Partner Network
+- Registering for the Office Store
+- Publishing an application on the Office Store and on Microsoft AppSource
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+1:38 Demo
+2:03 Enrolling for the Office Store Program
+2:50 Publishing an application on the Partners Marketplace
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• Prepare your SharePoint Framework application for publishing to the Marketplace - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-checklist
+• Commercial marketplace certification policies - https://learn.microsoft.com/en-us/legal/marketplace/certification-policies#1170-sharepoint-framework-solutions
+• Marketplace Enrollment - https://aka.ms/joinmarketplace
+• Microsoft Business Applications Independent Software Vendor (ISV) Connect Program onboarding guide - https://learn.microsoft.com/en-us/azure/marketplace/business-applications-isv-program
+• Store step-by-step submission guide - https://learn.microsoft.com/en-us/azure/marketplace/add-in-submission-guide 
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

@@ -1,0 +1,41 @@
+This module introduces you to the development of Azure Active Directory registered applications to consume SharePoint Online data as the evolution of SharePoint Add-in model Provider-hosted applications. 
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=NOy2O1VCs9M&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=16
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=OLN--qHnFDs&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=14
+
+#Microsoft365 #MicrosoftGraph #SharePointOnline #ProviderHosted #AzureADApplication 
+
+In this video, you will learn about
+
+- Registering Azure AD applications
+- Using the current user's security context to access SharePoint Online
+- Consuming SharePoint Online data
+- Using PnP Framework and AuthenticationManager
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+1:29 Transforming from SharePoint Add-in model Provider-hosted app to Azure AD registered application
+2:48 Demo
+4:25 Overview of generic scaffolded solution
+4:53 Configuring security and Dependency Injection
+6:25 Sample Azure AD registered application implementation
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• Quickstart: Register an application with the Microsoft identity platform - https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app
+• Tutorial: Register an app with Azure Active Directory - https://learn.microsoft.com/en-us/power-apps/developer/data-platform/walkthrough-register-app-azure-active-directory
+• AuthenticationManager class - https://pnp.github.io/pnpframework/api/PnP.Framework.AuthenticationManager.html 
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

@@ -1,0 +1,42 @@
+This module introduces you to the development of SharePoint Online client-side solutions, built with SharePoint Framework, using the SharePoint Online REST APIs, Microsoft Graph, and PnPjs as a modern replacement for SharePoint JavaScript Object Model (JSOM).
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=MLHMjJNHehE&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=11
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=HuQemEUWydM&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=9
+
+#Microsoft365 #AzureAD #MicrosoftGraph #PnPjs #JSOM #SharePointOnline 
+
+In this video, you will learn about
+
+- Upgrading from JSOM to client-side code in SPFx
+- Understanding how to consume SharePoint Online REST APIs in SPFx
+- Understanding how to consume Microsoft Graph in SPFx
+- Understanding how to use PnPjs library
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+2:40 Demo
+4:20 Consuming SharePoint Online data with SPFx via SPO REST APIs
+6:50 Consuming SharePoint Online data with Microsoft Graph
+9:00 Working with PnPjs
+10:47 Using PnPjs in a React component
+12:22 Using PnPjs in a React component with centralized initialization
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• Connect to SharePoint APIs - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/connect-to-sharepoint
+• Use the MSGraphClientV3 to connect to Microsoft Graph - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/use-msgraph
+• PnPjs - https://pnp.github.io/pnpjs/ 
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

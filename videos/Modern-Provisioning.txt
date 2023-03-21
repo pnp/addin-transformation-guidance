@@ -1,0 +1,39 @@
+This module introduces you to the modern provisioning of artifacts in SharePoint Online. In particular, you will learn about how to use the SharePoint Framework provisioning, the remote provisioning, and the PnP Provisioning Engine.
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=3u1ei8hcGG8&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=2
+
+#Microsoft365 #Provisioning #SharePointOnline 
+
+In this video, you will learn about
+
+- Provisioning artifacts using SharePoint Framework
+- Understanding remote provisioning
+- Learning how to use the PnP Provisioning Engine
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+3:25 Demo
+4:20 SharePoint Framework provisioning
+7:34 Remote provisioning with PnP Provisioning Engine
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• Provision SharePoint assets from your SharePoint client-side web part - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/provision-sp-assets-from-package
+• Tenant-scoped solution deployment for SharePoint Framework solutions - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/tenant-scoped-deployment
+• Use the site collection app catalog - https://learn.microsoft.com/en-us/sharepoint/dev/general-development/site-collection-app-catalog
+• PnP PowerShell - https://pnp.github.io/powershell/
+• Introducing the PnP provisioning engine - https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/introducing-the-pnp-provisioning-engine 
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

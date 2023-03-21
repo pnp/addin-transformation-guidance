@@ -1,0 +1,41 @@
+This module introduces you to Azure Active Directory and OAuth 2.0 to manage authentication and authorization when consuming Microsoft Graph or third party APIs in SharePoint Online modern solutions built with SharePoint Framework. You will also learn what a Delegated Access Token is and how to use it to consume external APIs.
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=jNKX6qos8ZI&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=3
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=Y8-YSuSKjZA&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=1
+
+#Microsoft365 #AzureAD #MicrosoftGraph #OAuth #AccessToken #DelegatedPermissions #SharePointOnline 
+
+In this video, you will learn about
+
+- Understanding Azure Active Directory and OAuth 2.0
+- Managing Access Tokens and permissions
+- Consuming Microsoft Graph or third party APIs from within SharePoint Framework
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+1:30 Demo
+2:22 Configuring delegated permissions
+3:54 Configuring application permissions
+4:57 Retrieving an Access Token with OAuth 2.0
+10:35 Consuming APIs securely in SharePoint Framework
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• Connect to Azure AD-secured APIs in SharePoint Framework solutions - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient
+• Isolated web parts - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/isolated-web-parts
+• Overview of the Microsoft Authentication Library (MSAL) - https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-overview
+• Microsoft Identity Web authentication library - https://learn.microsoft.com/en-us/azure/active-directory/develop/microsoft-identity-web 
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

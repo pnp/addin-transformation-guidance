@@ -1,0 +1,43 @@
+This module introduces you to the development of multi-tenant solutions for SharePoint Online and Microsoft 365. In particular, you will see how to consume multi-tenant applications in SharePoint Framework. 
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=94eJAsAm1Kg&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=5
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=jNKX6qos8ZI&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=3
+
+#Microsoft365 #AzureAD #MultiTenant #ISV #SharePointFramework #SharePointOnline 
+
+In this video, you will learn about
+
+- Designing multi-tenant solutions for Microsoft 365
+- Configuring multi-tenant applications in Azure Active Directory
+- Registering and granting permissions to multi-tenant applications
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+1:45 Demo
+3:04 Configuring application permissions
+5:07 Registration and permission grant on tenants
+9:00 Using multi-tenant applications in SharePoint Framework
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• Tenancies and deployment scopes for SharePoint Add-ins - https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/tenancies-and-deployment-scopes-for-sharepoint-add-ins
+• Consent experience for applications in Azure Active Directory - https://learn.microsoft.com/en-us/azure/active-directory/develop/application-consent-experience
+• Microsoft identity platform and OAuth 2.0 authorization code flow - https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
+• Connect to Azure AD-secured APIs in SharePoint Framework solutions - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient
+• Consume multi-tenant enterprise APIs secured with Azure AD in SharePoint Framework - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient-enterpriseapi-multitenant
+• Building ISV offering for Microsoft Viva with SPFx ACEs and multi-tenant APIs hosted in Azure - https://www.youtube.com/watch?v=6VEYD11m0TA
+• Consume a multi-tenant API within a set of Microsoft Viva Connections Adaptive Card Extensions (ACEs) - https://github.com/pnp/spfx-reference-scenarios/tree/main/samples/ace-pnp-contoso-orders 
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

@@ -1,0 +1,38 @@
+This module explains you how to transform you code from classic SP.UI components to render dialog windows to the modern SharePoint Framework Dialog Framework, in order to build modern dialogs fully integrated with the modern UI of SharePoint Online.
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=ipqQiJ_MbNM&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=10
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=-pivUEMMZVg&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=8
+
+#Microsoft365 #DialogFramework #SPFx #SharePointFramework #SharePointOnline 
+
+In this video, you will learn about
+
+- Transforming classic dialogs to modern dialogs
+- Using React to build the UI of dialogs
+- Using the Microsoft Fluent UI to easily build the UI of dialogs
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+0:56 Upgrading from classic to modern dialogs
+1:40 Demo
+3:40 Understanding the modern dialog code
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• Set up your SharePoint Framework development environment - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment 
+• Microsoft Fluent UI - https://developer.microsoft.com/en-us/fluentui 
+• Use custom dialog boxes with SharePoint Framework Extensions - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/guidance/using-custom-dialogs-with-spfx 
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

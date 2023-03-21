@@ -1,0 +1,42 @@
+This module introduces you to the development of SharePoint Online Webhooks and Microsoft Graph Notifications as a replacement for the SharePoint Add-in model Remote Event Receivers.
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=OLN--qHnFDs&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=14
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=q-FolBYQDMM&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=12
+
+#Microsoft365 #AzureAD #MicrosoftGraph #Webhook #SharePointOnline 
+
+In this video, you will learn about
+- Upgrading Remote Event Receivers to SharePoint Online Webhook
+- Scalable webhook architecture
+- Microsoft Graph Notifications
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+3:06 Demo
+9:25 Synchronous processing of SharePoint Online Webhooks
+13:13 Asynchronous processing of SharePoint Online Webhooks via queue
+17:25 SharePoint Online Webhook registration
+21:05 Microsoft Graph Notifications
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• SharePoint Add-in modern transformation guidance - https://aka.ms/sp/add-in/modernize
+• Overview of SharePoint webhooks - https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/overview-sharepoint-webhooks
+• Get started with SharePoint webhooks - https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/get-started-webhooks
+• SharePoint webhooks sample reference implementation - https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/webhooks-reference-implementation
+• SharePoint list webhooks - https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/lists/overview-sharepoint-list-webhooks
+• Set up notifications for changes in resource data - https://learn.microsoft.com/en-us/graph/webhooks
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

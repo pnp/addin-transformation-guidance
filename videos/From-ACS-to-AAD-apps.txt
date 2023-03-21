@@ -1,0 +1,43 @@
+This module introduces you to the migration from Azure Access Control Service (ACS) applications to Azure Active Directory (AAD) applications.
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=iq8iMXaTpBQ&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=4
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=3u1ei8hcGG8&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=2
+
+#Microsoft365 #AzureAD #AzureACS #SharePointOnline 
+
+In this video, you will learn about
+
+- Understanding Azure Active Directory registered applications
+- Upgrading from ACS to AAD
+- Consuming SharePoint Online with application only
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+2:00 How to upgrade from ACS to AAD
+2:47 Demo
+6:13 Registering an AAD application for application only
+9:32 AAD registered app permissions
+
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• Accessing SharePoint using an application context, also known as app-only - https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly
+• Granting access using SharePoint App-Only - https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly-azureacs
+• Granting access via Azure AD App-Only - https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly-azuread
+• PnP PowerShell - https://pnp.github.io/powershell/
+• PnP Core SDK - https://pnp.github.io/pnpcore/
+• PnP Framework documentation - https://pnp.github.io/pnpframework/
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

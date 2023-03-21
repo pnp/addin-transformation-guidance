@@ -1,0 +1,38 @@
+This module introduces you to the development of SharePoint Online notifications using the SharePoint Framework Application Customizers and the Fluent UI React components.
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=HuQemEUWydM&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=9
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=qbQ5QkzQOgQ&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=7
+
+#Microsoft365 #AzureAD #MicrosoftGraph #ApplicationCustomizer #SharePointOnline 
+
+In this video, you will learn about
+
+- Upgrading classic notification code to SharePoint Framework Application Customizers
+- Using Fluent UI controls
+- Extending the modern UI of SharePoint Online
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+1:12 Upgrading from SP.UI.* to SPFx Extensions
+2:03 Demo
+4:30 The initial Application Customizer implementation
+5:32 The real Application Customizer implementation
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• Build your first SharePoint Framework Extension (Hello World part 1) - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/build-a-hello-world-extension
+• Use page placeholders from Application Customizer (Hello World part 2) - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/using-page-placeholder-with-extensions 
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

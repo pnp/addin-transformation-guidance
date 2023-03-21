@@ -1,0 +1,38 @@
+This module introduces you to the development of SharePoint Framework Extensions of type List View Command Set as a replacement for classic UI Extensions.
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=-pivUEMMZVg&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=8
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=YFUt3pp6C1I&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=6
+
+#Microsoft365 #SharePointFramework #SPFx #Extensions #SharePointOnline 
+
+In this video, you will learn about
+
+- Creating SharePoint Framework Extensions
+- Building List View Command Set with SPFx
+- Using the SharePoint Framework Dialog Framework
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+1:23 Transforming classic UI Extensions to SharePoint Framework Extensions
+2:10 Demo
+4:32 Understanding the SPFx generated code
+7:02 Digging into the SPFx UI Extension for List View Command Set
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• Build your first ListView Command Set extension - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api
+• Use custom dialog boxes with SharePoint Framework Extensions - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/extensions/guidance/using-custom-dialogs-with-spfx 
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡

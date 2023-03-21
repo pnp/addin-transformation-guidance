@@ -1,0 +1,38 @@
+This module introduces you to the development of SharePoint Online client-side solutions with SharePoint Framework as a modern replacement for SharePoint Add-In model SharePoint hosted apps.
+
+This video is part of a series in a playlist about "Transform SharePoint Add-in model solutions to modern development pattern": https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+
+➡️ Next video on this series - https://www.youtube.com/watch?v=a1snL_hc94k&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=15
+⬅️ Previous video on this series - https://www.youtube.com/watch?v=3-fUEd6lGvI&list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe&index=13
+
+#Microsoft365 #SharePointFramework #SPFx #SharePointOnline 
+
+In this video, you will learn about
+
+- Migrating from SharePoint Add-in model SharePoint hosted apps to SharePoint Framework solutions
+- Building modern client-side solutions
+- Consuming SharePoint Online data in SharePoint Framework
+
+📖 All guidance content including code samples can be found here: http://aka.ms/sp/add-in/modernize/samples
+
+✨ Presenter
+• Paolo Pialorsi (PiaSys.com)
+
+📃 Agenda
+0:00 Introduction
+1:51 Transforming SharePoint hosted apps into SharePoint Framework solutions
+2:30 Demo
+4:50 Consuming SharePoint Online data in SharePoint Framework
+
+📝 Learn more
+• YouTube playlist for this video series - https://www.youtube.com/playlist?list=PLR9nK3mnD-OXJLA29Q0Xk7psbAUqzQZwe
+• Set up your SharePoint Framework development environment - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment 
+• Build your first SharePoint client-side web part (Hello World part 1) - https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part
+• PnPjs - https://pnp.github.io/pnpjs/ 
+
+💡 Learn more about the Microsoft 365 & Power Platform community
+• Microsoft 365 Unified Sample gallery - https://aka.ms/community/samples 
+• Microsoft 365 & Power Platform Community in YouTube - https://aka.ms/community/videos
+• Microsoft 365 & Power Platform - http://aka.ms/community/home
+
+Sharing is caring! You are awesome! 🧡
